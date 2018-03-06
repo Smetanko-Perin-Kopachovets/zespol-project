@@ -7,6 +7,8 @@
           <element id="module-output" name="agencja" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.posgresql:postgresql:9.4-1206-jdbc4" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.2.6.RELEASE" />
