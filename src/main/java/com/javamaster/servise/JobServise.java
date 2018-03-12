@@ -5,6 +5,8 @@ import com.javamaster.model.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class JobServise {
     private JobDao jobDao;
@@ -20,7 +22,7 @@ public class JobServise {
 
     }
 
-    public Job showJob(){
+    public ArrayList<Job> showJob(){
 
         return jobDao.getById();
 }

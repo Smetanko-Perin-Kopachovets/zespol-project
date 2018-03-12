@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 @Repository
 public class JobDao {
@@ -25,22 +26,15 @@ public class JobDao {
          }
      }
 
-        public Job getById(){
-
+        public ArrayList<Job> getById(){
+            ArrayList<Job> arrayList = new ArrayList<Job>();
             try {
-                PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(JobSQL.SHOW_JOB);
-                ResultSet resultSet = preparedStatement.executeQuery();
-                Job job = new Job();
+            ResultSet rs = Connect.getConnection().prepareStatement(JobSQL.SHOW_JOB).executeQuery();
 
-                while (resultSet.next()){
-                    job.setId(resultSet.getInt("id"));
-                    job.setStore(resultSet.getString("store"));
-                    job.setTitle(resultSet.getString("title"));
-
-                }
-                if (job != null){
-                    return job;
-                }
+            while (rs.next()){
+                arrayList.add(new Job(rs.getLong("id"), rs.getString("store"), rs.getString("title")));
+            }
+            return arrayList;
 
             } catch (SQLException e) {
                 e.printStackTrace();

@@ -1,13 +1,11 @@
 package com.javamaster.controller;
 
 import com.javamaster.model.Job;
-import com.javamaster.model.Market;
 import com.javamaster.servise.JobServise;
 import com.javamaster.servise.MarketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,12 +36,13 @@ public class JobController {
     }
 
     @RequestMapping(value = "/createJob", method = RequestMethod.POST)
-    public String createJob(@RequestParam("store") String store,
-                            @RequestParam("title") String title) {
+    public String createJob(@RequestParam("name") String name,
+                            @RequestParam("city") String city) {
 
 
+        marketService.createMarket(name, city);
 
-     jobServise.createJobs(store, title);
+
 
         return "redirect:/jobs";
     }
@@ -56,8 +55,8 @@ public class JobController {
 
     @RequestMapping(value = "/jobs/show", method = RequestMethod.GET)
     public String getByAllId(Model model){
-        Job job = jobServise.showJob();
-        model.addAttribute("jobServise", job);
+        ArrayList<Job> job = jobServise.showJob();
+        model.addAttribute("list2", job);
         return "welcome";
     }
 

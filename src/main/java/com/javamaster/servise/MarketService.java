@@ -17,6 +17,13 @@ public class MarketService {
         this.marketDao = marketDao;
     }
 
+    public void createMarket(String name, String city){
+        Market market = new Market(name, city);
+        marketDao.Createmarket(market);
+
+    }
+
+
     public ArrayList<Market> getAllById(){
         return marketDao.getAllMarket();
     }
