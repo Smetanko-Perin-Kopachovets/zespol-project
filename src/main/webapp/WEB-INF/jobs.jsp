@@ -16,22 +16,35 @@
 <body>
 
 <h1>Add new job</h1>
+
+
 <form:form action="/createJob" method="post">
 
-    <p> Enter id:</p> <input type="text" name="id">
-    <p> Enter stors:</p> <input type="text" name="stors">
+    <p> Enter store:</p> <input type="text" name="store">
     <p> Enter title:</p> <input type="text" name="title">
+
 
     <button type="submit">Create</button>
 
+
+</form:form>
+
+<form:form action="/jobs/market" method="get">
+    <button type="submit">Show</button>
+</form:form>
+
+<form:form action="/jobs/show" method="get">
+    <button type="submit">Show all job</button>
 </form:form>
 
 
-<c:forEach items="${list}" var="job">
-    <p>${job.id}</p>
-    <p>${job.stors}</p>
-    <p>${job.title}</p>
-</c:forEach>
+
+
+<%--<c:forEach items="${list}" var="jobServise">--%>
+    <%--<p>${jobServise.id}</p>--%>
+    <%--<p>${jobServise.store}</p>--%>
+    <%--<p>${jobServise.title}</p>--%>
+<%--</c:forEach>--%>
 
 
 </body>

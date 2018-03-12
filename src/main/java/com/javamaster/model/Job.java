@@ -2,10 +2,13 @@ package com.javamaster.model;
 
 public class Job {
     private long id;
+    private String store;
+    private String title;
+    private Market market;
 
-    public Job(long id, String stors, String title) {
+    public Job(long id, String store, String title) {
         this.id = id;
-        this.stors = stors;
+        this.store = store;
         this.title = title;
     }
 
@@ -13,7 +16,26 @@ public class Job {
 
     }
 
-    private String stors;
+    public Job(String store, String title) {
+        this.store = store;
+        this.title = title;
+    }
+
+    public Job(long id) {
+        this.id = id;
+    }
+
+
+
+
+
+    public Market getMarket() {
+        return market;
+    }
+
+    public void setMarket(Market market) {
+        this.market = market;
+    }
 
     public long getId() {
         return id;
@@ -23,12 +45,12 @@ public class Job {
         this.id = id;
     }
 
-    public String getStors() {
-        return stors;
+    public String getStore() {
+        return store;
     }
 
-    public void setStors(String stors) {
-        this.stors = stors;
+    public void setStore(String store) {
+        this.store = store;
     }
 
     public String getTitle() {
@@ -39,7 +61,6 @@ public class Job {
         this.title = title;
     }
 
-    private String title;
 
 
 }

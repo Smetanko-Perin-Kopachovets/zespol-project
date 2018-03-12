@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Vlad
@@ -9,12 +11,19 @@
 <html>
 <head>
     <title>Job by id</title>
+    <p>Hello</p>
 </head>
 <body>
 
-<p>${job.id}</p>
-<p>${job.stors}</p>
-<p>${job.title}</p>
+<c:forEach items="${list1}" var="marketService">
+<p>${marketService.id}</p>
+<p>${marketService.name}</p>
+<p>${marketService.city}</p>
+
+</c:forEach>
+
+
+
 
 </body>
 </html>
