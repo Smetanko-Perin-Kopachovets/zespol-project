@@ -10,18 +10,22 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+<link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <head>
-    <title>Jobs</title>
+    <title style="background-color: green"> Jobs</title>
 </head>
 <body>
 
-<h1>Add new job</h1>
+<h1 style="background-color: green"> Add new job </h1>
 
 
 <form:form action="/createJob" method="post">
 
-    <p> Enter store:</p> <input type="text" name="store">
-    <p> Enter title:</p> <input type="text" name="title">
+    <p style="background-color: black"> Enter store:</p> <input type="text" name="store">
+    <p style="background-color: black"> Enter title:</p> <input type="text" name="title">
 
 
     <button type="submit">Create</button>
