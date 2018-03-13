@@ -22,18 +22,7 @@
 <h1 style="background-color: green"> Add new job </h1>
 
 
-<form:form action="/createJob" method="post">
-
-    <p style="background-color: black"> Enter store:</p> <input type="text" name="store">
-    <p style="background-color: black"> Enter title:</p> <input type="text" name="title">
-
-
-    <button type="submit">Create</button>
-
-
-</form:form>
-
-<form:form action="/jobs/market" method="get">
+<form:form action="/jobs/store" method="get">
     <button type="submit">Show</button>
 </form:form>
 
