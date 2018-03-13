@@ -1,4 +1,4 @@
-package com.javamaster.Dao.sql;
+package com.javamaster.dao.sql;
 
 public class MarketSQL {
 

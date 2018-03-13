@@ -1,8 +1,8 @@
-package com.javamaster.Dao;
+package com.javamaster.dao;
 
-import com.javamaster.Dao.sql.MarketSQL;
+import com.javamaster.dao.sql.MarketSQL;
 import com.javamaster.config.Connect;
-import com.javamaster.model.Market;
+import com.javamaster.model.Store;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
@@ -12,14 +12,14 @@ import java.util.ArrayList;
 
 
 @Repository
-public class MarketDao {
+public class StoreDao {
 
 
-    public void Createmarket(Market market){
+    public void create(Store store){
         try {
             PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(MarketSQL.CREATE_MARKET);
-            preparedStatement.setString(1, market.getName());
-            preparedStatement.setString(2,market.getCity());
+            preparedStatement.setString(1, store.getName());
+            preparedStatement.setString(2, store.getCity());
             preparedStatement.execute();
             preparedStatement.close();
         } catch (SQLException e) {
@@ -27,16 +27,16 @@ public class MarketDao {
         }
     }
 
-    public ArrayList<Market> getAllMarket(){
+    public ArrayList<Store> getAll(){
         try {
-            ArrayList<Market> markets = new ArrayList<Market>();
+            ArrayList<Store> stores = new ArrayList<Store>();
             ResultSet rs  = Connect.getConnection().prepareStatement(MarketSQL.GET_ALL_MARKET).executeQuery();
 
             while (rs.next()){
-            markets.add(new Market(rs.getLong("id"), rs.getString("name"),rs.getString("city")));
+            stores.add(new Store(rs.getLong("id"), rs.getString("name"),rs.getString("city")));
 
             }
-            return markets;
+            return stores;
         } catch (SQLException e) {
             e.printStackTrace();
         }

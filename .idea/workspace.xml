@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="711af942-5f43-44c5-8da2-03e44546e72c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/StoreController.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/dao/StoreDao.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/Dao/JobDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/dao/JobDao.java" />
@@ -15,7 +14,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/Dao/sql/MarketSQL.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/dao/sql/MarketSQL.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/config/Connect.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/config/Connect.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/JobController.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/JobController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/model/Job.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/model/Job.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/model/Market.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/model/Store.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/servise/JobServise.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/service/JobService.java" />
@@ -556,12 +554,20 @@
       <option name="presentableId" value="Default" />
       <updated>1520870170088</updated>
       <workItem from="1520870171284" duration="1474000" />
-      <workItem from="1520932631123" duration="2084000" />
+      <workItem from="1520932631123" duration="2131000" />
     </task>
+    <task id="LOCAL-00001" summary="fix - controllers">
+      <created>1520941797142</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1520941797142</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3971000" />
+    <option name="totallyTimeSpent" value="4018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -611,7 +617,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="comit1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="comit1.0" />
+    <MESSAGE value="fix - controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix - controllers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

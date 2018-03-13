@@ -1,21 +1,21 @@
 package com.javamaster.model;
 
-public class Market {
+public class Store {
     private Long id;
     private String name;
     private String city;
 
-    public Market(long id, String name, String city) {
+    public Store(long id, String name, String city) {
         this.id = id;
         this.name = name;
         this.city = city;
     }
 
-    public Market() {
+    public Store() {
 
     }
 
-    public Market(String name, String city) {
+    public Store(String name, String city) {
         this.name = name;
         this.city = city;
     }
