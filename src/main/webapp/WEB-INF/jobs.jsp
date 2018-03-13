@@ -19,16 +19,16 @@
 </head>
 <body>
 
-<h1 style="background-color: green"> Add new job </h1>
+<%--<h1 style="background-color: green"> Add new job </h1>--%>
 
 
-<form:form action="/jobs/store" method="get">
-    <button type="submit">Show</button>
-</form:form>
+<%--<form:form action="/jobs/store" method="get">--%>
+    <%--<button type="submit">Show</button>--%>
+<%--</form:form>--%>
 
-<form:form action="/jobs/show" method="get">
-    <button type="submit">Show all job</button>
-</form:form>
+<%--<form:form action="/jobs/show" method="get">--%>
+    <%--<button type="submit">Show all job</button>--%>
+<%--</form:form>--%>
 
 
 
