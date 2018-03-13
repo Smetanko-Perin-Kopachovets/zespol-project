@@ -4,15 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class MainController {
 
 	@RequestMapping("/")
-	public String getIndex(){
-		return "index";
+	public String loadPage(){
+		return "main";
 	}
-	
-	@RequestMapping("/welcome")
-	public String getWelcome(){
-		return "welcome";
-	}
+
 }
