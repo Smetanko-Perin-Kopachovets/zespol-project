@@ -26,6 +26,9 @@
 
 </c:forEach>
 
+<form:form action="/back" method="get">
+    <button type="submit">BACK</button>
+</form:form>
 
 
 

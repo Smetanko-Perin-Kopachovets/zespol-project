@@ -24,8 +24,8 @@
 
 <form:form action="/createJob" method="post">
 
-    <p style="background-color: black"> Enter store:</p> <input type="text" name="store">
-    <p style="background-color: black"> Enter title:</p> <input type="text" name="title">
+    <p style="background-color: black"> Enter store:</p> <input type="text" name="name">
+    <p style="background-color: black"> Enter title:</p> <input type="text" name="city">
 
 
     <button type="submit">Create</button>
@@ -37,10 +37,11 @@
     <button type="submit">Show</button>
 </form:form>
 
-<form:form action="/jobs/show" method="get">
-    <button type="submit">Show all job</button>
+<form:form action="/stores" method="get">
+    <button type="submit">Go update</button>
 </form:form>
 
+<form
 
 
 

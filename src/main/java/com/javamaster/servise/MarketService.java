@@ -23,6 +23,10 @@ public class MarketService {
 
     }
 
+    public void updateMarket(Market market){
+        marketDao.Updatemarket(market);
+    }
+
 
     public ArrayList<Market> getAllById(){
         return marketDao.getAllMarket();

@@ -6,4 +6,6 @@ public class MarketSQL {
             " (name, city) " + " VALUES(?, ?);";
 
     public static final String GET_ALL_MARKET = "SELECT * FROM market;";
+
+    public static final String UPDATE_MARKET_ID = "UPDATE market SET name = ?, city = ? WHERE id = ?;";
 }

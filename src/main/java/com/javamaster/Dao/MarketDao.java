@@ -14,6 +14,20 @@ import java.util.ArrayList;
 @Repository
 public class MarketDao {
 
+    public void Updatemarket(Market market){
+        try {
+            PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(MarketSQL.UPDATE_MARKET_ID);
+            preparedStatement.setString(1,market.getName());
+            preparedStatement.setString(2,market.getCity());
+            preparedStatement.setLong(3,market.getId());
+            preparedStatement.execute();
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void Createmarket(Market market){
         try {
