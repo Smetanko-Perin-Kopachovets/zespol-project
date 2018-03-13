@@ -1,6 +1,6 @@
 package com.javamaster.dao.sql;
 
-public class MarketSQL {
+public class StoreSQL {
 
     public static final String CREATE_MARKET = "INSERT INTO market " +
             " (name, city) " + " VALUES(?, ?);";

@@ -1,6 +1,6 @@
 package com.javamaster.dao;
 
-import com.javamaster.dao.sql.MarketSQL;
+import com.javamaster.dao.sql.StoreSQL;
 import com.javamaster.config.Connect;
 import com.javamaster.model.Store;
 import org.springframework.stereotype.Repository;
@@ -14,12 +14,12 @@ import java.util.ArrayList;
 @Repository
 public class StoreDao {
 
-    public void Updatemarket(Market market){
+    public void update(Store store){
         try {
-            PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(MarketSQL.UPDATE_MARKET_ID);
-            preparedStatement.setString(1,market.getName());
-            preparedStatement.setString(2,market.getCity());
-            preparedStatement.setLong(3,market.getId());
+            PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(StoreSQL.UPDATE_MARKET_ID);
+            preparedStatement.setString(1,store.getName());
+            preparedStatement.setString(2,store.getCity());
+            preparedStatement.setLong(3,store.getId());
             preparedStatement.execute();
             preparedStatement.close();
 
@@ -31,7 +31,7 @@ public class StoreDao {
 
     public void create(Store store){
         try {
-            PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(MarketSQL.CREATE_MARKET);
+            PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(StoreSQL.CREATE_MARKET);
             preparedStatement.setString(1, store.getName());
             preparedStatement.setString(2, store.getCity());
             preparedStatement.execute();
@@ -44,7 +44,7 @@ public class StoreDao {
     public ArrayList<Store> getAll(){
         try {
             ArrayList<Store> stores = new ArrayList<Store>();
-            ResultSet rs  = Connect.getConnection().prepareStatement(MarketSQL.GET_ALL_MARKET).executeQuery();
+            ResultSet rs  = Connect.getConnection().prepareStatement(StoreSQL.GET_ALL_MARKET).executeQuery();
 
             while (rs.next()){
             stores.add(new Store(rs.getLong("id"), rs.getString("name"),rs.getString("city")));
