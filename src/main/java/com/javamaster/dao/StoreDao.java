@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 
@@ -56,5 +57,16 @@ public class StoreDao {
         }
 
         return null;
+    }
+
+    public void deleteByid(Integer id) {
+        try {
+            PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(StoreSQL.DELETE_MARKET_BY_ID);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

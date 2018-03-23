@@ -1,8 +1,13 @@
 package com.javamaster.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+
 public class Store {
     private Long id;
+    @NotEmpty
     private String name;
+    @NotEmpty
     private String city;
 
     public Store(long id, String name, String city) {

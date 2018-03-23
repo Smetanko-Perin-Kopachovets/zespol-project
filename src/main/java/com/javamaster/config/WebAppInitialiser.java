@@ -1,7 +1,9 @@
 package com.javamaster.config;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+@Configuration
 public class WebAppInitialiser extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
@@ -23,3 +25,19 @@ public class WebAppInitialiser extends AbstractAnnotationConfigDispatcherServlet
 	}
 
 }
+//public class WebAppInitializer implements WebApplicationInitializer {
+//    @Override
+//    public void onStartup(ServletContext container) {
+//        AnnotationConfigWebApplicationContext context
+//                = new AnnotationConfigWebApplicationContext();
+//        context.setConfigLocation("com.javamaster.config");
+//
+//        container.addListener(new ContextLoaderListener(context));
+//
+//        ServletRegistration.Dynamic dispatcher = container
+//                .addServlet("dispatcher", new DispatcherServlet(context));
+//
+//        dispatcher.setLoadOnStartup(1);
+//        dispatcher.addMapping("/");
+//    }
+//}

@@ -26,4 +26,13 @@ public class StoreService {
     public ArrayList<Store> getAll() {
         return storeDao.getAll();
     }
+
+    public void update(Long id, String name, String city){
+        Store store = new Store(id, name, city);
+         storeDao.update(store);
+    }
+
+    public void delete(Integer id){
+    storeDao.deleteByid(id);
+    }
 }

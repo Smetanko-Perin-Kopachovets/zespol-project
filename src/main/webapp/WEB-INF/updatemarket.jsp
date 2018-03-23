@@ -12,9 +12,9 @@
     <title>Update</title>
 </head>
 <body>
-<form:form action="/jobs/update" method="get">
+<form:form action="/updateMarket" method="post">
 
-    <input  name="id">
+    <input type="hidden" value="${id}" name="id">
     <input type="text" name="name">
     <input type="text" name="city">
 
