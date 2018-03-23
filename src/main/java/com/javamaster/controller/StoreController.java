@@ -32,15 +32,19 @@ public class StoreController {
     }
 
     @RequestMapping(value = "/createStore", method = RequestMethod.POST)
-    public String createStore(@Valid Store store, BindingResult result) {
+    public ModelAndView createStore(@Valid Store store, BindingResult result) {
+        ModelAndView mow = new ModelAndView();
+        mow.getModelMap().addAttribute("store", new Store());
+        mow.setViewName("stores");
 
         if (result.hasErrors()) {
-            result.getModel().put("storesList", storeService.getAll());
-            result.getModel().put("store", new Store());
-            return "redirect:/stores";
+            mow.getModelMap().addAttribute("storesList", storeService.getAll());
+            mow.getModelMap().addAllAttributes(result.getModel());
+            return mow;
         } else {
             storeService.create(store.getName(), store.getCity());
-            return "redirect:/stores";
+            mow.getModelMap().addAttribute("storesList", storeService.getAll());
+            return mow;
         }
     }
 
