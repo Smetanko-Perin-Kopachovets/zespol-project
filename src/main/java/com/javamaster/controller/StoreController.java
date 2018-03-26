@@ -2,6 +2,7 @@ package com.javamaster.controller;
 
 import com.javamaster.model.Store;
 import com.javamaster.service.StoreService;
+import jdk.nashorn.internal.runtime.linker.Bootstrap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.awt.*;
 
 
 @Controller
@@ -28,6 +30,7 @@ public class StoreController {
 
         model.addAttribute("storesList", storeService.getAll());
         model.addAttribute("store", new Store());
+
         return "stores";
     }
 
@@ -44,6 +47,7 @@ public class StoreController {
         } else {
             storeService.create(store.getName(), store.getCity());
             mow.getModelMap().addAttribute("storesList", storeService.getAll());
+            mow.getModelMap().addAttribute("message", "Success");
             return mow;
         }
     }

@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
 <head>
     <title>Create store</title>
     <style>
@@ -30,9 +31,13 @@
         }
     </style>
 </head>
+
+
+
 <body>
 
 <form:form action="/createStore" modelAttribute="store"  method="post">
+
     <%--<form:errors path="*"  cssClass="errorblock" element="div" />--%>
     <table>
         <tr>
@@ -44,14 +49,16 @@
             <td>Enter address:</td>
             <td><form:input path="city" /></td>
             <td><form:errors path="city" cssClass="error"/></td>
-            <c:if test="${not empty message}"><td>${message}</td></c:if>
         </tr>
         <tr>
+
             <button type="submit">Create</button>
+
         </tr>
     </table>
 
 </form:form>
+<c:if test="${not empty message}" >${message}</c:if>
 
 <form>
     <input id="filter" data-type="search">
@@ -84,15 +91,6 @@
     </tbody>
     </c:forEach>
 </table>
-
-
-
-
-
-
-
-
-
 
 
 

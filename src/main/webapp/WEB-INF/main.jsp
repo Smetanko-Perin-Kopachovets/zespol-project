@@ -9,6 +9,7 @@
 
 <%--<form:form action="/stores" method="get">--%>
 <a href="/stores"><button type="submit">ADD STORE</button></a>
+<a href="/jobtype"><button type="submit">ADD JOBTYPE</button></a>
 <%--</form:form>--%>
 </body>
 </html>

@@ -3,17 +3,28 @@ package com.javamaster.model;
 //TODO
 public class Job {
     private Long id;
-    private String title;
+    private String type;
+    private Float pricePerHour;
     private Store store;
 
-    public Job(long id, String title, Store store) {
+
+    public Job(long id, float pricePerHour, String type, Store store) {
         this.id = id;
-        this.title = title;
+        this.type = type;
+        this.pricePerHour = pricePerHour;
         this.store = store;
     }
 
-    public Job() {
+    public Job(Long id) {
+        this.id = id;
     }
+
+    public Job(String type, Float pricePerHour, Store store) {
+        this.type = type;
+        this.pricePerHour = pricePerHour;
+        this.store = store;
+    }
+
 
     public long getId() {
         return id;
@@ -23,12 +34,20 @@ public class Job {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public Float getPricePerHour() {
+        return pricePerHour;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setPricePerHour(Float pricePerHour) {
+        this.pricePerHour = pricePerHour;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String jobtype) {
+        this.type = type;
     }
 
     public Store getStore() {

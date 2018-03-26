@@ -1,26 +1,25 @@
 package com.javamaster.dao;
 
-import com.javamaster.dao.sql.StoreSQL;
 import com.javamaster.config.Connect;
+import com.javamaster.dao.sql.StoreSQL;
 import com.javamaster.model.Store;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 
 @Repository
 public class StoreDao {
 
-    public void update(Store store){
+    public void update(Store store) {
         try {
             PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(StoreSQL.UPDATE_MARKET_ID);
-            preparedStatement.setString(1,store.getName());
-            preparedStatement.setString(2,store.getCity());
-            preparedStatement.setLong(3,store.getId());
+            preparedStatement.setString(1, store.getName());
+            preparedStatement.setString(2, store.getCity());
+            preparedStatement.setLong(3, store.getId());
             preparedStatement.execute();
             preparedStatement.close();
 
@@ -30,7 +29,7 @@ public class StoreDao {
     }
 
 
-    public void create(Store store){
+    public void create(Store store) {
         try {
             PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(StoreSQL.CREATE_MARKET);
             preparedStatement.setString(1, store.getName());
@@ -42,13 +41,13 @@ public class StoreDao {
         }
     }
 
-    public ArrayList<Store> getAll(){
+    public ArrayList<Store> getAll() {
         try {
             ArrayList<Store> stores = new ArrayList<Store>();
-            ResultSet rs  = Connect.getConnection().prepareStatement(StoreSQL.GET_ALL_MARKET).executeQuery();
+            ResultSet rs = Connect.getConnection().prepareStatement(StoreSQL.GET_ALL_MARKET).executeQuery();
 
-            while (rs.next()){
-            stores.add(new Store(rs.getLong("id"), rs.getString("name"),rs.getString("city")));
+            while (rs.next()) {
+                stores.add(new Store(rs.getLong("id"), rs.getString("name"), rs.getString("city")));
 
             }
             return stores;
@@ -69,4 +68,22 @@ public class StoreDao {
             e.printStackTrace();
         }
     }
+
+    public Store marketByID(long id) {
+        try {
+            PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(StoreSQL.GET_MARKET_BY_ID);
+            preparedStatement.setLong(1, id);
+            ResultSet rs = preparedStatement.executeQuery();
+            Store store = null;
+            while (rs.next()) {
+                store = new Store(rs.getLong("id"), rs.getString("name"), rs.getString("city"));
+            }
+            return store;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
+
+

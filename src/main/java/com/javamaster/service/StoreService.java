@@ -35,4 +35,8 @@ public class StoreService {
     public void delete(Integer id){
     storeDao.deleteByid(id);
     }
+
+    public Store getById(long id){
+        return storeDao.marketByID(id);
+    }
 }
