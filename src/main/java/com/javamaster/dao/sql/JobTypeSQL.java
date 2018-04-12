@@ -2,7 +2,7 @@ package com.javamaster.dao.sql;
 
 import com.sun.istack.internal.FinalArrayList;
 
-public class JobSQL {
+public class JobTypeSQL {
 
     public static final String CREATE_JOBTYPE = "INSERT INTO jobtype(type, pricePerHour, market_id_fk) VALUES (?, ?, ?);";
 

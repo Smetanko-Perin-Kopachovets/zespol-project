@@ -1,8 +1,8 @@
 package com.javamaster.dao;
 
 import com.javamaster.config.Connect;
-import com.javamaster.dao.sql.JobSQL;
-import com.javamaster.model.Job;
+import com.javamaster.dao.sql.JobTypeSQL;
+import com.javamaster.model.JobType;
 import com.javamaster.model.Store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,22 +12,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-//TODO
 @Repository
-public class JobDao {
+public class JobTypeDao {
     private StoreDao storeDao;
     @Autowired
     public void StoreServise(StoreDao storeDao){
         this.storeDao = storeDao;
     }
 
-    public void create(Job job) {
+    public void create(JobType jobType) {
         try {
 //            TODO Autogeneration key
-            PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(JobSQL.CREATE_JOBTYPE);
-            preparedStatement.setString(1, job.getType());
-            preparedStatement.setFloat(2, job.getPricePerHour());
-            preparedStatement.setLong(3, job.getStore().getId());
+            PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(JobTypeSQL.CREATE_JOBTYPE);
+            preparedStatement.setString(1, jobType.getType());
+            preparedStatement.setFloat(2, jobType.getPricePerHour());
+            preparedStatement.setLong(3, jobType.getStore().getId());
             preparedStatement.execute();
             preparedStatement.close();
 
@@ -36,17 +35,17 @@ public class JobDao {
         }
     }
 
-    public ArrayList<Job> getAll() {
+    public ArrayList<JobType> getAll() {
         try {
-            ArrayList<Job> jobs = new ArrayList<Job>();
-            ResultSet rs = Connect.getConnection().prepareStatement(JobSQL.GET_ALL_JOBTYPE).executeQuery();
+            ArrayList<JobType> jobTypes = new ArrayList<JobType>();
+            ResultSet rs = Connect.getConnection().prepareStatement(JobTypeSQL.GET_ALL_JOBTYPE).executeQuery();
 
             while (rs.next()) {
                 Store store = storeDao.marketByID(rs.getLong("market_id_fk"));
-                jobs.add(new Job(rs.getLong("id"), rs.getFloat("pricePerHour"), rs.getString("type"), store));
+                jobTypes.add(new JobType(rs.getLong("id"), rs.getFloat("pricePerHour"), rs.getString("type"), store));
 
             }
-            return jobs;
+            return jobTypes;
         } catch (SQLException e) {
             e.printStackTrace();
         }

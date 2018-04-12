@@ -48,13 +48,13 @@
 
                    </tr>
         </thead>
-    <c:forEach items="${jobtypeList}" var="job">
+    <c:forEach items="${jobtypeList}" var="jobType">
         <tbody>
         <tr>
-            <td>${job.id}</td>
-            <td>${job.type}</td>
-            <td>${job.pricePerHour}</td>
-            <td>${job.store.name}, ${job.store.city}</td>
+            <td>${jobType.id}</td>
+            <td>${jobType.type}</td>
+            <td>${jobType.pricePerHour}</td>
+            <td>${jobType.store.name}, ${jobType.store.city}</td>
 
         </tr>
 

@@ -1,25 +1,25 @@
 package com.javamaster.model;
 
 //TODO
-public class Job {
+public class JobType {
     private Long id;
     private String type;
     private Float pricePerHour;
     private Store store;
 
 
-    public Job(long id, float pricePerHour, String type, Store store) {
+    public JobType(long id, float pricePerHour, String type, Store store) {
         this.id = id;
         this.type = type;
         this.pricePerHour = pricePerHour;
         this.store = store;
     }
 
-    public Job(Long id) {
+    public JobType(Long id) {
         this.id = id;
     }
 
-    public Job(String type, Float pricePerHour, Store store) {
+    public JobType(String type, Float pricePerHour, Store store) {
         this.type = type;
         this.pricePerHour = pricePerHour;
         this.store = store;
