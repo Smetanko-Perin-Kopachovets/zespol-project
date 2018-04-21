@@ -27,16 +27,16 @@ public class StoreService {
         return storeDao.getAll();
     }
 
-    public void update(Long id, String name, String city){
+    public void update(Long id, String name, String city) {
         Store store = new Store(id, name, city);
-         storeDao.update(store);
+        storeDao.update(store);
     }
 
-    public void delete(Integer id){
-    storeDao.deleteByid(id);
+    public void delete(Long id) {
+        storeDao.deleteById(id);
     }
 
-    public Store getById(long id){
-        return storeDao.marketByID(id);
+    public Store getById(Long id) {
+        return storeDao.marketById(id);
     }
 }

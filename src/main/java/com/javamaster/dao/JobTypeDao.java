@@ -41,7 +41,7 @@ public class JobTypeDao {
             ResultSet rs = Connect.getConnection().prepareStatement(JobTypeSQL.GET_ALL_JOBTYPE).executeQuery();
 
             while (rs.next()) {
-                Store store = storeDao.marketByID(rs.getLong("market_id_fk"));
+                Store store = storeDao.marketById(rs.getLong("market_id_fk"));
                 jobTypes.add(new JobType(rs.getLong("id"), rs.getFloat("pricePerHour"), rs.getString("type"), store));
 
             }

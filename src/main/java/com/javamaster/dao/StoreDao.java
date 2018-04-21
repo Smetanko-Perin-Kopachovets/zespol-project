@@ -58,10 +58,10 @@ public class StoreDao {
         return null;
     }
 
-    public void deleteByid(Integer id) {
+    public void deleteById(Long id) {
         try {
             PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(StoreSQL.DELETE_MARKET_BY_ID);
-            preparedStatement.setInt(1, id);
+            preparedStatement.setLong(1, id);
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -69,7 +69,7 @@ public class StoreDao {
         }
     }
 
-    public Store marketByID(long id) {
+    public Store marketById(Long id) {
         try {
             PreparedStatement preparedStatement = Connect.getConnection().prepareStatement(StoreSQL.GET_MARKET_BY_ID);
             preparedStatement.setLong(1, id);

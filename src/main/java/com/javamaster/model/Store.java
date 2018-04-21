@@ -4,13 +4,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 
 public class Store {
+
     private Long id;
     @NotEmpty
     private String name;
     @NotEmpty
     private String city;
 
-    public Store(long id, String name, String city) {
+    public Store(Long id, String name, String city) {
         this.id = id;
         this.name = name;
         this.city = city;

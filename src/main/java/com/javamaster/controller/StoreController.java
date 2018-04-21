@@ -39,7 +39,7 @@ public class StoreController {
     public ModelAndView createStore(@Valid Store store, BindingResult result) {
         ModelAndView mow = new ModelAndView();
         mow.getModelMap().addAttribute("store", new Store());
-        mow.setViewName("stores");
+        mow.setViewName("redirect:stores");
 
         if (result.hasErrors()) {
             mow.getModelMap().addAttribute("storesList", storeService.getAll());
@@ -54,21 +54,21 @@ public class StoreController {
     }
 
 
-    @RequestMapping(value = "/deleteById/{id}", method = RequestMethod.GET)
-    public ModelAndView deleteById(@PathVariable("id") int id) {
+    @RequestMapping(value = "/deleteById/{id}", method = RequestMethod.POST)
+    public ModelAndView deleteById(@PathVariable("id") Long id) {
         storeService.delete(id);
         //redirectAttributes.addAttribute("messege", "succesfull delete");
         return new ModelAndView("redirect:/stores");
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
-    public String loadupdateShop(@PathVariable("id") int id, Model model) {
+    public String loadupdateShop(@PathVariable("id") Long id, Model model) {
         model.addAttribute("id", id);
         return "updatemarket";
     }
 
     @RequestMapping(value = "/updateMarket", method = RequestMethod.POST)
-    public String updateShop(@RequestParam("id") long id,
+    public String updateShop(@RequestParam("id") Long id,
                              @RequestParam("name") String name,
                              @RequestParam("city") String city) {
 
