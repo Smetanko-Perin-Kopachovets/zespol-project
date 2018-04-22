@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+    <%--<script type="text/javascript" src="../static/store.js"></script>--%>
+    <style>
+        <%@include file="../static/css/toast.css"%>
+    </style>
     <title>Stores</title>
 
 </head>
@@ -18,7 +21,6 @@
 
 <form:form data-ajax="false" action="/createStore" modelAttribute="store" method="post">
 
-    <%--<form:errors path="*"  cssClass="errorblock" element="div" />--%>
     <table>
         <tr>
             <td>Enter title:</td>
@@ -39,10 +41,6 @@
 
 </form:form>
 
-<c:if test="${not empty message}">
-
-</c:if>
-
 <form>
     <input id="filter" data-type="search">
 </form>
@@ -62,7 +60,7 @@
     </tr>
     </thead>
 
-    <c:forEach items="${storesList}" var="store">
+    <c:forEach items="${storeList}" var="store">
         <tbody>
         <tr>
             <td>${store.id}</td>
@@ -74,7 +72,7 @@
                 </form:form>
             </td>
             <td>
-                <form:form data-ajax="false" action="/deleteById/${store.id}" method="post">
+                <form:form data-ajax="false" action="/delete/${store.id}" method="post">
                     <button type="submit">Delete</button>
                 </form:form>
             </td>
@@ -84,6 +82,20 @@
     </c:forEach>
 </table>
 
+<c:if test="${not empty message}">
+
+    <div id="snackbar"><span>${message}</span></div>
+
+    <script>
+        console.log("Get method");
+        var toast = document.getElementById("snackbar");
+        toast.className = "show";
+        setTimeout(function () {
+            toast.className = toast.className.replace("show", "");
+        }, 3000);
+    </script>
+
+</c:if>
 
 </body>
 </html>

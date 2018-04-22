@@ -12,13 +12,14 @@
     <title>Update</title>
 </head>
 <body>
-<form:form action="/updateMarket" method="post">
+<form:form action="/updateStore" method="post">
 
     <input type="hidden" value="${id}" name="id">
     <input type="text" name="name">
     <input type="text" name="city">
 
     <button type="submit">Update</button>
+
 </form:form>
 </body>
 </html>

@@ -22,11 +22,6 @@
     </build>
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>org.posgresql</groupId>-->
-            <!--<artifactId>postgresql</artifactId>-->
-            <!--<version>9.4-1206-jdbc4</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>org.hibernate</groupId>

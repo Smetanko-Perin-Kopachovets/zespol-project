@@ -28,7 +28,7 @@ public class JobTypeController {
     public String loadPage(Model model){
         model.addAttribute("storelist", storeService.getAll());
         model.addAttribute("jobtypeList", jobTypeService.getAll());
-        return "jobtype";
+        return "jobType";
 
     }
 

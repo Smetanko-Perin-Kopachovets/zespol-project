@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
@@ -20,58 +21,57 @@ public class StoreController {
 
     private StoreService storeService;
 
-
     @Autowired
     public StoreController(StoreService storeService) {
         this.storeService = storeService;
     }
 
     @RequestMapping(value = "/stores", method = RequestMethod.GET)
-    public String loadPage(Model model ) {
-
-        model.addAttribute("storesList", storeService.getAll());
+    public String loadPage(Model model) {
+        model.addAttribute("storeList", storeService.getAll());
         model.addAttribute("store", new Store());
-
         return "stores";
     }
 
     @RequestMapping(value = "/createStore", method = RequestMethod.POST)
-    public ModelAndView createStore(@Valid Store store, BindingResult result) {
-        ModelAndView mow = new ModelAndView();
-        mow.getModelMap().addAttribute("store", new Store());
-        mow.setViewName("redirect:stores");
+    public String createStore(@Valid Store store,
+                              BindingResult result,
+                              RedirectAttributes redirectAttributes) {
 
         if (result.hasErrors()) {
-            mow.getModelMap().addAttribute("storesList", storeService.getAll());
-            mow.getModelMap().addAllAttributes(result.getModel());
-            return mow;
+            redirectAttributes.addFlashAttribute("message", "Failed");
+            return "redirect:/stores";
         } else {
             storeService.create(store.getName(), store.getCity());
-            mow.getModelMap().addAttribute("storesList", storeService.getAll());
-            mow.getModelMap().addAttribute("message", "Success");
-            return mow;
+            redirectAttributes.addFlashAttribute("message", "Success created");
+            return "redirect:/stores";
         }
     }
 
 
-    @RequestMapping(value = "/deleteById/{id}", method = RequestMethod.POST)
-    public ModelAndView deleteById(@PathVariable("id") Long id) {
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    public ModelAndView delete(@PathVariable("id") Long id,
+                               RedirectAttributes redirectAttributes) {
+
         storeService.delete(id);
-        //redirectAttributes.addAttribute("messege", "succesfull delete");
+        redirectAttributes.addFlashAttribute("message", "Success deleted item");
         return new ModelAndView("redirect:/stores");
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
-    public String loadupdateShop(@PathVariable("id") Long id, Model model) {
+    public String loadUpdatePage(@PathVariable("id") Long id,
+                                 Model model) {
         model.addAttribute("id", id);
-        return "updatemarket";
+        return "updateStore";
     }
 
-    @RequestMapping(value = "/updateMarket", method = RequestMethod.POST)
+    @RequestMapping(value = "/updateStore", method = RequestMethod.POST)
     public String updateShop(@RequestParam("id") Long id,
                              @RequestParam("name") String name,
-                             @RequestParam("city") String city) {
+                             @RequestParam("city") String city,
+                             RedirectAttributes redirectAttributes) {
 
+        redirectAttributes.addFlashAttribute("message", "Success updated item");
         storeService.update(id, name, city);
 
         return "redirect:/stores";
