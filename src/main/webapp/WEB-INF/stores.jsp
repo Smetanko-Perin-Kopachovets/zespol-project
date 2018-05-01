@@ -7,18 +7,14 @@
 <head>
 
     <meta name="viewport" content="width = device-width, initial-scale = 1">
-
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <style>
         <%@include file="../static/css/toast.css"%>
-
     </style>
+
     <title>Stores</title>
 
 </head>
@@ -63,9 +59,7 @@
         <th data-priority="1">ID</th>
         <th data-priority="2">Name shop</th>
         <th data-priority="3">Address</th>
-        <th data-priority="4">Update</th>
-        <th data-priority="5">Remove</th>
-               
+        <th data-priority="4">More</th>      
     </tr>
     </thead>
 
@@ -75,14 +69,10 @@
             <td>${store.id}</td>
             <td>${store.name}</td>
             <td>${store.city}</td>
+
             <td>
-                <form:form data-ajax="false" action="/update/${store.id}" method="get">
-                    <button type="submit">Update</button>
-                </form:form>
-            </td>
-            <td>
-                <form:form data-ajax="false" action="/delete/${store.id}" method="post">
-                    <button type="submit" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext">Delete</button>
+                <form:form data-ajax="false" action="stores/get/${store.id}" method="get">
+                    <button type="submit">More</button>
                 </form:form>
             </td>
         </tr>

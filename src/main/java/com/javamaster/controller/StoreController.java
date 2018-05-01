@@ -1,6 +1,8 @@
 package com.javamaster.controller;
 
+import com.javamaster.model.JobType;
 import com.javamaster.model.Store;
+import com.javamaster.service.JobTypeService;
 import com.javamaster.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,16 +16,20 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
 public class StoreController {
 
     private StoreService storeService;
+    private JobTypeService jobTypeService;
 
     @Autowired
-    public StoreController(StoreService storeService) {
+    public StoreController(StoreService storeService, JobTypeService jobTypeService) {
         this.storeService = storeService;
+        this.jobTypeService = jobTypeService;
     }
 
     @RequestMapping(value = "/stores", method = RequestMethod.GET)
@@ -58,14 +64,6 @@ public class StoreController {
         return new ModelAndView("redirect:/stores");
     }
 
-    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
-    public String loadUpdatePage(@PathVariable("id") Long id,
-                                 Model model) {
-
-        model.addAttribute("id", id);
-        return "updateStore";
-    }
-
     @RequestMapping(value = "/updateStore", method = RequestMethod.POST)
     public String updateShop(@RequestParam("id") Long id,
                              @RequestParam("name") String name,
@@ -76,6 +74,25 @@ public class StoreController {
         Store store = new Store(id, name, city);
         storeService.update(store);
         return "redirect:/stores";
+    }
+
+    @RequestMapping(value = "stores/get/{id}", method = RequestMethod.GET)
+    public String loadStoreById(@PathVariable("id") Long id,
+                                Model model) {
+        Store store = storeService.getById(id);
+        List<JobType> jobTypesNotSorted = jobTypeService.getAll();
+        List<JobType> jobTypes = new ArrayList<JobType>();
+        for(JobType jobType : jobTypesNotSorted) {
+            if(jobType.getStore().getId().equals(id)) {
+                jobTypes.add(jobType);
+            }
+        }
+
+        model.addAttribute("id", id);
+        model.addAttribute("store", store);
+        model.addAttribute("jobTypes", jobTypes);
+        return "store";
+
     }
 
 }
