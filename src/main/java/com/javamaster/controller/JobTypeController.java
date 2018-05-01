@@ -2,6 +2,7 @@ package com.javamaster.controller;
 
 import com.javamaster.model.JobType;
 import com.javamaster.model.Store;
+
 import com.javamaster.service.JobTypeService;
 import com.javamaster.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +18,16 @@ public class JobTypeController {
     private JobTypeService jobTypeService;
     private StoreService storeService;
 
-
     @Autowired
     public JobTypeController(JobTypeService jobTypeService, StoreService storeService) {
         this.jobTypeService = jobTypeService;
         this.storeService = storeService;
     }
 
-    @RequestMapping(value = "/jobtype", method = RequestMethod.GET)
-    public String loadPage(Model model){
-        model.addAttribute("storelist", storeService.getAll());
-        model.addAttribute("jobtypeList", jobTypeService.getAll());
+    @RequestMapping(value = "/jobType", method = RequestMethod.GET)
+    public String loadPage(Model model) {
+        model.addAttribute("storeList", storeService.getAll());
+        model.addAttribute("jobTypeList", jobTypeService.getAll());
         return "jobType";
 
     }
@@ -35,16 +35,12 @@ public class JobTypeController {
     @RequestMapping(value = "/createJobType", method = RequestMethod.POST)
     public String createJobType(@RequestParam("type") String type,
                                 @RequestParam("pricePerHour") Float pricePerHour,
-                                @RequestParam("id-store")Long id){
+                                @RequestParam("id-store") Long id) {
 
-       Store store =  storeService.getById(id);
-       jobTypeService.create(new JobType(type, pricePerHour, store));
+        Store store = storeService.getById(id);
+        jobTypeService.create(new JobType(type, pricePerHour, store));
 
-        return "redirect:/jobtype";
+        return "redirect:/jobType";
     }
-
-
-
-
 
 }

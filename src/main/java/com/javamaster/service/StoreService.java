@@ -1,42 +1,19 @@
 package com.javamaster.service;
 
-
-import com.javamaster.dao.StoreDao;
 import com.javamaster.model.Store;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.List;
 
-@Service
-public class StoreService {
+public interface StoreService {
 
-    private StoreDao storeDao;
+    Store create(Store store);
 
-    @Autowired
-    public StoreService(StoreDao storeDao) {
-        this.storeDao = storeDao;
-    }
+    void delete(Long id);
 
-    public void create(String name, String city) {
-        Store store = new Store(name, city);
-        storeDao.create(store);
-    }
+    Store getById(Long id);
 
-    public ArrayList<Store> getAll() {
-        return storeDao.getAll();
-    }
+    Store update(Store store);
 
-    public void update(Long id, String name, String city) {
-        Store store = new Store(id, name, city);
-        storeDao.update(store);
-    }
+    List<Store> getAll();
 
-    public void delete(Long id) {
-        storeDao.deleteById(id);
-    }
-
-    public Store getById(Long id) {
-        return storeDao.marketById(id);
-    }
 }

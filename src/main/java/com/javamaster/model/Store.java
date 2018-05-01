@@ -2,13 +2,23 @@ package com.javamaster.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name="market")
 public class Store {
 
+    @Id
+    //Strategy not AUTO, cuz postgres id type: serial
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+
     @NotEmpty
+    @Column(name = "name", nullable = false)
     private String name;
+
     @NotEmpty
+    @Column(name = "city", nullable = false, length = 100)
     private String city;
 
     public Store(Long id, String name, String city) {
@@ -49,7 +59,6 @@ public class Store {
     public void setCity(String city) {
         this.city = city;
     }
-
 
 
 }

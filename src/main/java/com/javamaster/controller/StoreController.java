@@ -42,7 +42,7 @@ public class StoreController {
             redirectAttributes.addFlashAttribute("message", "Failed");
             return "redirect:/stores";
         } else {
-            storeService.create(store.getName(), store.getCity());
+            storeService.create(store);
             redirectAttributes.addFlashAttribute("message", "Success created");
             return "redirect:/stores";
         }
@@ -61,6 +61,7 @@ public class StoreController {
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String loadUpdatePage(@PathVariable("id") Long id,
                                  Model model) {
+
         model.addAttribute("id", id);
         return "updateStore";
     }
@@ -72,10 +73,9 @@ public class StoreController {
                              RedirectAttributes redirectAttributes) {
 
         redirectAttributes.addFlashAttribute("message", "Success updated item");
-        storeService.update(id, name, city);
-
+        Store store = new Store(id, name, city);
+        storeService.update(store);
         return "redirect:/stores";
     }
-
 
 }

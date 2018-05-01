@@ -1,31 +1,19 @@
 package com.javamaster.service;
 
-import com.javamaster.dao.JobTypeDao;
 import com.javamaster.model.JobType;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.List;
 
-//TODO
-@Service
-public class JobTypeService {
+public interface JobTypeService {
 
-    private JobTypeDao jobTypeDao;
+    JobType create(JobType jobType);
 
-    @Autowired
-    public JobTypeService(JobTypeDao jobTypeDao) {
-        this.jobTypeDao = jobTypeDao;
-    }
+    void delete(Long id);
 
-    public void create(JobType jobType){
-        jobTypeDao.create(jobType);
-    }
+    JobType getById(Long id);
 
-    public ArrayList<JobType> getAll(){
-        return jobTypeDao.getAll();
-}
+    JobType update(JobType jobType);
 
-
+    List<JobType> getAll();
 
 }

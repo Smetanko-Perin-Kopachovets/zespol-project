@@ -1,10 +1,24 @@
 package com.javamaster.model;
 
-//TODO
+import javax.persistence.*;
+
+@Entity
+@Table(name = "jobtype")
 public class JobType {
+
+    @Id
+    //Strategy not AUTO, cuz postgres id type: serial
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "type", nullable = false)
     private String type;
+
+    @Column(name = "pricePerHour", nullable = false)
     private Float pricePerHour;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "market_id_fk", nullable = false)
     private Store store;
 
 

@@ -7,12 +7,17 @@
 <head>
 
     <meta name="viewport" content="width = device-width, initial-scale = 1">
+
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <%--<script type="text/javascript" src="../static/store.js"></script>--%>
+
     <style>
         <%@include file="../static/css/toast.css"%>
+
     </style>
     <title>Stores</title>
 
@@ -45,8 +50,12 @@
     <input id="filter" data-type="search">
 </form>
 
-<table data-role="table" data-column-btn-theme="b" data-mode="columntoggle" data-filter="true" data-input="#filter"
-       class="ui-responsive table-stroke">
+<table data-role="table"
+       data-column-btn-theme="b"
+       data-mode="columntoggle"
+       data-filter="true"
+       data-input="#filter"
+       class="ui-responsive table-stroke" >
 
     <thead>
        
@@ -73,7 +82,7 @@
             </td>
             <td>
                 <form:form data-ajax="false" action="/delete/${store.id}" method="post">
-                    <button type="submit">Delete</button>
+                    <button type="submit" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext">Delete</button>
                 </form:form>
             </td>
         </tr>
