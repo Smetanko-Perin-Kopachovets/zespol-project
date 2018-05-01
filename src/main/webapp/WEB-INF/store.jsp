@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<div>
+<div data-role="page">
 
     <h2>Select action</h2>
 
@@ -46,7 +46,10 @@
         </div>
             
         <ul id="jobTypes" class="tablist-content" data-role="listview" data-inset="true">
-                    
+
+            <a href="#dialog" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="pop">Create job
+                type</a>        
+
             <ul data-role="listview" data-split-icon="delete" data-split-theme="a" data-inset="true">
                   
                 <c:forEach items="${jobTypes}" var="jobType">  
@@ -83,7 +86,24 @@
 
     </div>
 
-
 </div>
+
+<div data-role="dialog" id="dialog">
+    <div data-role="header">
+        <h1>Create job type</h1>
+    </div>
+    <div data-role="content">
+        <form:form data-ajax="false" action="/jobtype/create" method="post">
+
+            <input type="hidden" value="${store.id}" name="storeId">
+            <p>Enter jobtype:</p><input name="type" id="type">
+            <p>Enter price:</p><input name="pricePerHour" type="number" id="pricePerHour">
+            <p></p>
+            <button type="submit">Create</button>
+
+        </form:form>
+    </div>
+</div>
+
 </body>
 </html>

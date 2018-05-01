@@ -33,17 +33,17 @@ public class JobTypeController {
         return "jobType";
     }
 
-    @RequestMapping(value = "/createJobType", method = RequestMethod.POST)
+    @RequestMapping(value = "jobtype/create", method = RequestMethod.POST)
     public String createJobType(@RequestParam("type") String type,
                                 @RequestParam("pricePerHour") Float pricePerHour,
-                                @RequestParam("id-store") Long id) {
+                                @RequestParam("storeId") Long id) {
 
         Store store = storeService.getById(id);
         JobType jobType = new JobType(type, pricePerHour, store);
         System.out.println(jobType.getPricePerHour() + " " + jobType.getStore().getCity() + jobType.getStore().getId());
         jobTypeService.create(new JobType(type, pricePerHour, store));
 
-        return "redirect:/jobtype";
+        return "redirect:/stores/get/" + jobType.getStore().getId();
     }
 
     @RequestMapping(value = "jobtype/remove/{id}", method = RequestMethod.GET)

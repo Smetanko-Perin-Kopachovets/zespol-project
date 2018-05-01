@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<form:form action="/createJobType" method="post">
+<form:form action="/jobtype/create" method="post">
     <p>Enter jobtype:</p><input name="type" id="type">
     <p>Enter price:</p><input name="pricePerHour" type="number" id="pricePerHour">
 
