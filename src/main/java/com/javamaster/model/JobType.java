@@ -17,10 +17,11 @@ public class JobType {
     @Column(name = "pricePerHour", nullable = false)
     private Float pricePerHour;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToOne
     @JoinColumn(name = "market_id_fk", nullable = false)
     private Store store;
 
+    public JobType() {}
 
     public JobType(long id, float pricePerHour, String type, Store store) {
         this.id = id;
@@ -29,7 +30,7 @@ public class JobType {
         this.store = store;
     }
 
-    public JobType(Long id) {
+    public JobType(Long id)  {
         this.id = id;
     }
 
@@ -40,11 +41,11 @@ public class JobType {
     }
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

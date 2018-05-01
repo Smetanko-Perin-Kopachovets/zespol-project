@@ -24,12 +24,12 @@ public class JobTypeController {
         this.storeService = storeService;
     }
 
-    @RequestMapping(value = "/jobType", method = RequestMethod.GET)
+    @RequestMapping(value = "/jobtype", method = RequestMethod.GET)
     public String loadPage(Model model) {
         model.addAttribute("storeList", storeService.getAll());
         model.addAttribute("jobTypeList", jobTypeService.getAll());
-        return "jobType";
 
+        return "jobType";
     }
 
     @RequestMapping(value = "/createJobType", method = RequestMethod.POST)
@@ -38,9 +38,11 @@ public class JobTypeController {
                                 @RequestParam("id-store") Long id) {
 
         Store store = storeService.getById(id);
+        JobType jobType = new JobType(type, pricePerHour, store);
+        System.out.println(jobType.getPricePerHour() + " " + jobType.getStore().getCity() + jobType.getStore().getId());
         jobTypeService.create(new JobType(type, pricePerHour, store));
 
-        return "redirect:/jobType";
+        return "redirect:/jobtype";
     }
 
 }
