@@ -39,7 +39,7 @@ public class StoreController {
         return "stores";
     }
 
-    @RequestMapping(value = "/createStore", method = RequestMethod.POST)
+    @RequestMapping(value = "/stores/create", method = RequestMethod.POST)
     public String createStore(@Valid Store store,
                               BindingResult result,
                               RedirectAttributes redirectAttributes) {
@@ -55,7 +55,7 @@ public class StoreController {
     }
 
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+@RequestMapping(value = "/stores/delete/{id}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable("id") Long id,
                                RedirectAttributes redirectAttributes) {
 
@@ -64,7 +64,7 @@ public class StoreController {
         return new ModelAndView("redirect:/stores");
     }
 
-    @RequestMapping(value = "/updateStore", method = RequestMethod.POST)
+    @RequestMapping(value = "/stores/update", method = RequestMethod.POST)
     public String updateShop(@RequestParam("id") Long id,
                              @RequestParam("name") String name,
                              @RequestParam("city") String city,
@@ -76,9 +76,10 @@ public class StoreController {
         return "redirect:/stores";
     }
 
-    @RequestMapping(value = "stores/get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/stores/get/{id}", method = RequestMethod.GET)
     public String loadStoreById(@PathVariable("id") Long id,
                                 Model model) {
+
         Store store = storeService.getById(id);
         List<JobType> jobTypesNotSorted = jobTypeService.getAll();
         List<JobType> jobTypes = new ArrayList<JobType>();

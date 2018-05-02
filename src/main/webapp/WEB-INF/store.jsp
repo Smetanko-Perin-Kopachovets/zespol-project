@@ -10,8 +10,8 @@
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <style>
-        <%@include file="../static/css/toast.css"%>
-        <%@include file="../static/css/store.css"%>
+        <%@include file="../resources/css/toast.css"%>
+        <%@include file="../resources/css/store.css"%>
     </style>
 
     <title>Store</title>
@@ -42,6 +42,10 @@
             <p>${store.id}</p>
             <p>${store.name}</p>
             <p>${store.city}</p>
+
+            <form:form data-ajax="false" action="/stores/delete/${store.id}" method="get">
+                <button type="submit">Remove</button>
+            </form:form>
               
         </div>
             
@@ -74,7 +78,7 @@
 
             <h1>Update store</h1>
 
-            <form:form data-ajax="false" action="/updateStore" method="post">
+            <form:form data-ajax="false" action="/stores/update" method="post">
                 <input type="hidden" value="${id}" name="id">
                 <input type="text" name="name" value="${store.name}">
                 <input type="text" name="city" value="${store.city}">

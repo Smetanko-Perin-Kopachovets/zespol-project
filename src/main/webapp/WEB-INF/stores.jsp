@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="https" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -11,8 +12,9 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+    <script src="<c:url value="/resources/js/store.js" />"></script>
     <style>
-        <%@include file="../static/css/toast.css"%>
+        <%@include file="../resources/css/toast.css"%>
     </style>
 
     <title>Stores</title>
@@ -20,7 +22,7 @@
 </head>
 <body>
 
-<form:form data-ajax="false" action="/createStore" modelAttribute="store" method="post">
+<form:form data-ajax="false" action="/stores/create" modelAttribute="store" method="post">
 
     <table>
         <tr>
@@ -51,7 +53,7 @@
        data-mode="columntoggle"
        data-filter="true"
        data-input="#filter"
-       class="ui-responsive table-stroke" >
+       class="ui-responsive table-stroke">
 
     <thead>
        
@@ -59,7 +61,8 @@
         <th data-priority="1">ID</th>
         <th data-priority="2">Name shop</th>
         <th data-priority="3">Address</th>
-        <th data-priority="4">More</th>      
+        <th data-priority="4">More</th>
+              
     </tr>
     </thead>
 
@@ -82,18 +85,10 @@
 </table>
 
 <c:if test="${not empty message}">
-
     <div id="snackbar"><span>${message}</span></div>
-
     <script>
-        console.log("Get method");
-        var toast = document.getElementById("snackbar");
-        toast.className = "show";
-        setTimeout(function () {
-            toast.className = toast.className.replace("show", "");
-        }, 3000);
+        window.showToast();
     </script>
-
 </c:if>
 
 </body>
