@@ -7,6 +7,8 @@
           <element id="module-output" name="agencja" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.5" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.2" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-jdk14:1.7.25" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.0.0.RELEASE" />
