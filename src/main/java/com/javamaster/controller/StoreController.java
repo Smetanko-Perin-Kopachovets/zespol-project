@@ -48,8 +48,8 @@ public class StoreController {
             redirectAttributes.addFlashAttribute("message", "Failed");
             return "redirect:/stores";
         } else {
-            storeService.create(store);
-            redirectAttributes.addFlashAttribute("message", "Success created");
+            Store createdStore = storeService.create(store);
+            redirectAttributes.addFlashAttribute("message", "Success created " + createdStore.getName() + " in " + createdStore.getCity());
             return "redirect:/stores";
         }
     }
@@ -60,7 +60,7 @@ public class StoreController {
                                RedirectAttributes redirectAttributes) {
 
         storeService.delete(id);
-        redirectAttributes.addFlashAttribute("message", "Success deleted item");
+        redirectAttributes.addFlashAttribute("message", "Success deleted item with id - " + id);
         return new ModelAndView("redirect:/stores");
     }
 
@@ -70,9 +70,12 @@ public class StoreController {
                              @RequestParam("city") String city,
                              RedirectAttributes redirectAttributes) {
 
-        redirectAttributes.addFlashAttribute("message", "Success updated item");
+
         Store store = new Store(id, name, city);
-        storeService.update(store);
+        Store updatedStore = storeService.update(store);
+        if(updatedStore != null) {
+            redirectAttributes.addFlashAttribute("message", "Success updated item with id - " + updatedStore.getId());
+        }
         return "redirect:/stores";
     }
 

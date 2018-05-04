@@ -13,7 +13,7 @@
     <h2 style="background-color:DodgerBlue;">Temp employee</h2>
 
     <a href="/stores">
-        <button type="submit">STORE</button>
+        <button type="submit">STORES</button>
     </a>
     <a href="/jobtype">
         <button type="submit">JOB TYPE</button>
