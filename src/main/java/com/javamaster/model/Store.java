@@ -27,9 +27,7 @@ public class Store {
         this.city = city;
     }
 
-    public Store() {
-
-    }
+    public Store() { }
 
     public Store(String name, String city) {
         this.name = name;

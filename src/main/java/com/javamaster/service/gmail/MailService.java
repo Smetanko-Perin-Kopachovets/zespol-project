@@ -1,5 +1,6 @@
-package com.javamaster.service;
+package com.javamaster.service.gmail;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ import java.util.Properties;
 @Service
 @PropertySource("classpath:application.properties")
 public class MailService {
+
+    @Autowired
+    private GmailAuthenticator gmailAuthenticator;
 
     @Resource
     private Environment env;
@@ -41,14 +45,9 @@ public class MailService {
         properties.put(PROP_MAIL_AUTH, env.getRequiredProperty(PROP_MAIL_AUTH));
         properties.put(PROP_MAIL_HOST, PROP_LOCALHOST);
 
-        Session session = Session.getDefaultInstance(properties,
-                new javax.mail.Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(
-                                env.getRequiredProperty(PROP_MAIL_USER),
-                                env.getRequiredProperty(PROP_MAIL_PASSWORD));
-                    }
-                });
+        Session session = gmailAuthenticator.getSession(properties,
+                env.getRequiredProperty(PROP_MAIL_USER),
+                env.getRequiredProperty(PROP_MAIL_PASSWORD));
 
         MimeMessage message = new MimeMessage(session);
 

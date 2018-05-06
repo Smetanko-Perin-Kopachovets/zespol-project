@@ -15,9 +15,7 @@
     <a href="/stores">
         <button type="submit">STORES</button>
     </a>
-    <a href="/jobtype">
-        <button type="submit">JOB TYPE</button>
-    </a>
+
 </div>
 </body>
 </html>

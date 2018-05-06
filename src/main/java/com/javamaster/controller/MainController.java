@@ -1,6 +1,6 @@
 package com.javamaster.controller;
 
-import com.javamaster.service.MailService;
+import com.javamaster.service.gmail.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,8 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String loadPage(){
-	    mailService.sendEmail("andriismetanko@gmail.com");
+//	    mailService.sendEmail("andriismetanko@gmail.com");
+
 		return "main";
 	}
 
