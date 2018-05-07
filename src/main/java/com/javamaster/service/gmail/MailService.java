@@ -6,13 +6,14 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.mail.*;
-import javax.mail.internet.AddressException;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.Properties;
 
 @Service
 @PropertySource("classpath:application.properties")
@@ -56,28 +57,21 @@ public class MailService {
         try {
 
             message.setFrom(new InternetAddress(env.getRequiredProperty(PROP_MAIL_USER)));
-            List<InternetAddress> toAddress = new ArrayList<>();
 
             Arrays.stream(arrayTo).forEach(string -> {
                 try {
-                    toAddress.add(new InternetAddress(string));
                     message.addRecipient(Message.RecipientType.TO, new InternetAddress(string));
                 } catch (MessagingException e) {
                     e.printStackTrace();
                 }
             });
 
-//            for (int i = 0; i < toAddress.size(); i++) {
-//                message.addRecipient(Message.RecipientType.TO, toAddress.get(i));
-//            }
-
             message.setSubject(subject);
             message.setContent(
                     "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXILbBYCMTgMvu56rjlmRk0iqZySEwS0gPCVi1gNQgU318RkyFPQ' />" +
                             "<h3 > Title </h3>" +
                             "<p> Body </p>" +
-                            "<a href='http://localhost:8088/'> <button> Service </button> </a>" +
-                            ""
+                            "<a href='http://localhost:8088/'> <button> Service </button> </a>"
 
                     , "text/html");
 
