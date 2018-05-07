@@ -16,8 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -55,7 +55,7 @@ public class StoreController {
     }
 
 
-@RequestMapping(value = "/stores/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/stores/delete/{id}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable("id") Long id,
                                RedirectAttributes redirectAttributes) {
 
@@ -73,24 +73,21 @@ public class StoreController {
 
         Store store = new Store(id, name, city);
         Store updatedStore = storeService.update(store);
-        if(updatedStore != null) {
+        if (updatedStore != null) {
             redirectAttributes.addFlashAttribute("message", "Success updated item with id - " + updatedStore.getId());
         }
         return "redirect:/stores";
     }
 
     @RequestMapping(value = "/stores/get/{id}", method = RequestMethod.GET)
-    public String loadStoreById(@PathVariable("id") Long id,
+    public String loadStoreById(@PathVariable("id") final Long id,
                                 Model model) {
 
         Store store = storeService.getById(id);
         List<JobType> jobTypesNotSorted = jobTypeService.getAll();
-        List<JobType> jobTypes = new ArrayList<JobType>();
-        for(JobType jobType : jobTypesNotSorted) {
-            if(jobType.getStore().getId().equals(id)) {
-                jobTypes.add(jobType);
-            }
-        }
+        List<JobType> jobTypes = jobTypesNotSorted.stream().
+                filter(JobType -> JobType.getStore().getId().equals(id))
+                .collect(Collectors.toList());
 
         model.addAttribute("id", id);
         model.addAttribute("store", store);

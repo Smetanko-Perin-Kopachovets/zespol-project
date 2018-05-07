@@ -10,7 +10,9 @@ import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.Properties;
+import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Service
 @PropertySource("classpath:application.properties")
@@ -31,9 +33,9 @@ public class MailService {
     private static final String PROP_MAIL_HOST = "mail.smtp.host";
     private static final String PROP_LOCALHOST = "localhost";
 
-    public void sendEmail(String mailTo) {
+    public void sendEmail(String mailTo, String subject) {
 
-        String[] to = {mailTo};
+        String[] arrayTo = {mailTo};
 
         Properties properties = System.getProperties();
 
@@ -54,21 +56,28 @@ public class MailService {
         try {
 
             message.setFrom(new InternetAddress(env.getRequiredProperty(PROP_MAIL_USER)));
-            InternetAddress[] toAddress = new InternetAddress[to.length];
+            List<InternetAddress> toAddress = new ArrayList<>();
 
-            for (int i = 0; i < to.length; i++) {
-                toAddress[i] = new InternetAddress(to[i]);
-            }
+            Arrays.stream(arrayTo).forEach(string -> {
+                try {
+                    toAddress.add(new InternetAddress(string));
+                    message.addRecipient(Message.RecipientType.TO, new InternetAddress(string));
+                } catch (MessagingException e) {
+                    e.printStackTrace();
+                }
+            });
 
-            for (int i = 0; i < toAddress.length; i++) {
-                message.addRecipient(Message.RecipientType.TO, toAddress[i]);
-            }
+//            for (int i = 0; i < toAddress.size(); i++) {
+//                message.addRecipient(Message.RecipientType.TO, toAddress.get(i));
+//            }
 
-            message.setSubject("Notification - jober");
+            message.setSubject(subject);
             message.setContent(
                     "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXILbBYCMTgMvu56rjlmRk0iqZySEwS0gPCVi1gNQgU318RkyFPQ' />" +
-                            "<h3 >Title</h3>" +
-                            "<p> body text </p>"
+                            "<h3 > Title </h3>" +
+                            "<p> Body </p>" +
+                            "<a href='http://localhost:8088/'> <button> Service </button> </a>" +
+                            ""
 
                     , "text/html");
 
@@ -82,8 +91,6 @@ public class MailService {
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
 
-        } catch (AddressException ae) {
-            ae.printStackTrace();
         } catch (MessagingException me) {
             me.printStackTrace();
         }

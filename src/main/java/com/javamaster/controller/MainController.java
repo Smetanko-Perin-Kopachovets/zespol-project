@@ -13,8 +13,7 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String loadPage(){
-//	    mailService.sendEmail("andriismetanko@gmail.com");
-
+	    mailService.sendEmail("andriismetanko@gmail.com", "test");
 		return "main";
 	}
 

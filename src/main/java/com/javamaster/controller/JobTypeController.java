@@ -40,7 +40,6 @@ public class JobTypeController {
 
         Store store = storeService.getById(id);
         JobType jobType = new JobType(type, pricePerHour, store);
-        System.out.println(jobType.getPricePerHour() + " " + jobType.getStore().getCity() + jobType.getStore().getId());
         jobTypeService.create(new JobType(type, pricePerHour, store));
 
         return "redirect:/stores/get/" + jobType.getStore().getId();
@@ -51,6 +50,7 @@ public class JobTypeController {
 
         JobType jobType = jobTypeService.getById(id);
         jobTypeService.delete(id);
+
         return "redirect:/stores/get/" + jobType.getStore().getId();
     }
 
