@@ -1,33 +1,45 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 
     <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <script src="<c:url value="/resources/js/git-stats.js" />"></script>
+    <script src="<c:url value="/resources/js/main.js" />"></script>
 
 </head>
 <body>
 
 <div>
 
-    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-    </a>
+    <%@include file="nav.jsp" %>
 
-    <div class="navbar-menu" id="navMenu">
-        <!-- navbar-start, navbar-end... -->
-    </div>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="tile is-parent ">
+                <article class="tile is-child box">
+                    <p class="title">Project - Service temp employee</p>
+                    <p class="subtitle">Git stats contributors </p>
+                    <div class="content">
+                        <p>Some text with description</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-    <h2 style="background-color:DodgerBlue;">Temp employee</h2>
-
-    <a href="/stores">
-        <button type="submit">STORES</button>
-    </a>
+    <nav class="level" id="git-stats">
+        <div class="column" id="loaderStat">
+				<span class="icon has-text-centered">
+					<i class="fas fa-spinner fa-3x fa-spin"></i>
+				</span>
+            <br>
+            <p><span><strong>Parsing json GitHub</strong></span></p>
+        </div>
+    </nav>
 
 </div>
 </body>

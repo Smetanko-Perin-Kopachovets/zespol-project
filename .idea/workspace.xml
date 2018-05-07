@@ -617,7 +617,7 @@
       <workItem from="1525596906736" duration="6796000" />
       <workItem from="1525611197443" duration="6237000" />
       <workItem from="1525633318646" duration="2494000" />
-      <workItem from="1525683410572" duration="18798000" />
+      <workItem from="1525683410572" duration="18886000" />
     </task>
     <task id="LOCAL-00001" summary="fix - controllers">
       <created>1520941797142</created>
@@ -766,11 +766,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525696048446</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="add - frontend">
+      <created>1525718719272</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1525718719272</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127484000" />
+    <option name="totallyTimeSpent" value="127572000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -848,7 +855,8 @@
     <MESSAGE value="refactor - mail service" />
     <MESSAGE value="add - config hibernate" />
     <MESSAGE value="refactor - gmail service" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor - gmail service" />
+    <MESSAGE value="add - frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="add - frontend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
