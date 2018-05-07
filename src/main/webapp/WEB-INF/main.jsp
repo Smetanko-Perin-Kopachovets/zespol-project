@@ -10,37 +10,47 @@
     <script src="<c:url value="/resources/js/git-stats.js" />"></script>
     <script src="<c:url value="/resources/js/main.js" />"></script>
 
+    <style>
+        <%@include file="../resources/css/main.css" %>
+    </style>
+
 </head>
 <body>
 
-<div>
+<%@include file="nav.jsp" %>
 
-    <%@include file="nav.jsp" %>
+<section class="hero">
+    <div class="hero-body" style="padding: 10px">
+        <div class="container">
+            <h2 class="title">
+                Main page
+            </h2>
+            <h2 class="subtitle">
+                Serwis tymczasowego zatrudnienia
+                <br>
+                Below stats from GitHub
+            </h2>
+            <div class="divider"></div>
+        </div>
+    </div>
+</section>
 
-    <section class="hero">
-        <div class="hero-body">
-            <div class="tile is-parent ">
-                <article class="tile is-child box">
-                    <p class="title">Project - Service temp employee</p>
-                    <p class="subtitle">Git stats contributors </p>
-                    <div class="content">
-                        <p>Some text with description</p>
-                    </div>
-                </article>
+<div class="content" style="margin: 15px;">
+    <div class="box">
+
+
+        <nav class="level" id="git-stats">
+            <div class="column has-text-centered" id="loaderStat">
+					<span class="icon ">
+						<i class="fas fa-spinner fa-3x fa-spin"></i>
+					</span>
+                <br>
+                <p><span><strong>Parsing json GitHub</strong></span></p>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <nav class="level" id="git-stats">
-        <div class="column" id="loaderStat">
-				<span class="icon has-text-centered">
-					<i class="fas fa-spinner fa-3x fa-spin"></i>
-				</span>
-            <br>
-            <p><span><strong>Parsing json GitHub</strong></span></p>
-        </div>
-    </nav>
-
+    </div>
 </div>
+
 </body>
 </html>

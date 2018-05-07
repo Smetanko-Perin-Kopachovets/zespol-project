@@ -36,13 +36,13 @@ function showData(array) {
             "<article class='tile is-child box '> " +
             "<div class='level-item '> " +
             "<div> " +
-            "<p style='font-size: 25px;'>" + array[i].login + "</p> " +
-            "<p class='title'> " + array[i].commit +
+            "<p style='font-size: 23px;'>" + array[i].login + "</p> " +
+            "<p style='font-size: 23px;'><strong>" + array[i].commit +
             "<span class='icon'>" +
             "<i class='fas fa-code-branch fa-xs'> </i>" +
-            "</span>" +
+            "</span></strong>" +
+            "<div class='divider'></div>" +
             "</p> " +
-            "<div class='is-divider' ></div>" +
             "<span class='icon is-centered' > " +
             "<img class='image' style='border-radius:50%' src='" + array[i].img + "'> </img> " +
             "</span>" +

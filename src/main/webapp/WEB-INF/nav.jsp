@@ -1,4 +1,4 @@
-<nav class="navbar is-transparent is-dark">
+<nav class="navbar is-transparent is-dark ">
     <div class="navbar-brand">
         <i class="fab fa-accusoft fa-3x"></i>
         <a class="navbar-item">
@@ -42,7 +42,7 @@
 							<i class="fas fa-chevron-right"></i>
 						</span>
 
-                <a class="button is-primary">
+                <a class="button is-primary" href="https://github.com/Smetanko-Perin-Kopachovets/zespol-project">
 							<span class="icon">
 								<i class="fab fa-git fa-2x"></i>
 							</span>
