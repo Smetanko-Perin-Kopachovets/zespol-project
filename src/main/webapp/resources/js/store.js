@@ -1,9 +1,12 @@
+$(document).ready(
+    function () {
+        $('#tabs li').on('click', function () {
+            var tab = $(this).data('tab');
 
-function showToast() {
-    console.log("Get method");
-    var toast = document.getElementById("snackbar");
-    toast.className = "show";
-    setTimeout(function () {
-        toast.className = toast.className.replace("show", "");
-    }, 3000);
-}
+            $('#tabs li').removeClass('is-active');
+            $(this).addClass('is-active');
+
+            $('#tab-content div').removeClass('is-active');
+            $('div[data-content="' + tab + '"]').addClass('is-active');
+        });
+    });

@@ -6,109 +6,74 @@
 <head>
 
     <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
+    <script src="<c:url value="/resources/js/store.js" />"></script>
+    <script src="<c:url value="/resources/js/main.js" />"></script>
     <style>
-        <%@include file="../resources/css/toast.css"%>
-        <%@include file="../resources/css/store.css"%>
+        <%@include file="../resources/css/toast.css" %>
+        <%@include file="../resources/css/store.css" %>
     </style>
+
 
     <title>Store</title>
 </head>
 <body>
 
-<div data-role="page">
+<%@include file="nav.jsp" %>
 
-    <h2>Select action</h2>
+<div class="tabs is-medium  is-centered" id="tabs">
+    <ul>
+        <li data-tab="1" class="is-active"><a>Info</a></li>
+        <li data-tab="2"><a>Job types</a></li>
+        <li data-tab="3"><a>Update</a></li>
+    </ul>
+</div>
 
-    <div data-role="tabs">
-            
-        <ul data-role="listview" data-inset="true" class="tablist-left">
-                  
-            <li><a href="#info" data-ajax="false">Info</a></li>
-                  
-            <li><a href="#jobTypes" data-ajax="false">Job types</a></li>
-                  
-            <li><a href="#update" data-ajax="false">Update</a></li>
-                
-        </ul>
+<div id="tab-content">
+    <div class="is-active" data-content="1">
+        <h1>Information about store</h1>
 
-            
-        <div id="info" class="ui-body-d tablist-content">
+        <p>${store.id}</p>
+        <p>${store.name}</p>
+        <p>${store.city}</p>
 
-            <h1>Information about store</h1>
+        <form:form data-ajax="false" action="/stores/delete/${store.id}" method="get">
+            <button type="submit">Remove</button>
 
-            <p>${store.id}</p>
-            <p>${store.name}</p>
-            <p>${store.city}</p>
+        </form:form>
+    </div>
+    <div data-content="2">
+        <c:forEach items="${jobTypes}" var="jobType">  
+            <li>
 
-            <form:form data-ajax="false" action="/stores/delete/${store.id}" method="get">
-                <button type="submit">Remove</button>
-            </form:form>
-              
-        </div>
-            
-        <ul id="jobTypes" class="tablist-content" data-role="listview" data-inset="true">
+                <h2>${jobType.type} in ${jobType.store.city}</h2>
+                <p>${jobType.pricePerHour}</p>
+                <form:form data-ajax="false" action="/jobtype/remove/${jobType.id}" method="get">
+                    <button type="submit">Remove</button>
+                </form:form>
 
-            <a href="#dialog" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="pop">Create job
-                type</a>        
+                    
+            </li>
+        </c:forEach>
+    </div>
+    <div data-content="3">
+        <h1>Update store</h1>
 
-            <ul data-role="listview" data-split-icon="delete" data-split-theme="a" data-inset="true">
-                  
-                <c:forEach items="${jobTypes}" var="jobType">  
-                    <li>
+        <form:form data-ajax="false" action="/stores/update" method="post">
+            <input type="hidden" value="${id}" name="id">
+            <input type="text" name="name" value="${store.name}">
+            <input type="text" name="city" value="${store.city}">
 
-                        <h2>${jobType.type} in ${jobType.store.city}</h2>
-                        <p>${jobType.pricePerHour}</p>
-                        <form:form data-ajax="false" action="/jobtype/remove/${jobType.id}" method="get">
-                            <button type="submit">Remove</button>
-                        </form:form>
-
-                            
-                    </li>
-                </c:forEach>
-            </ul>
-
-
-                
-        </ul>
-
-        <div id="update" class="ui-body-d tablist-content">
-
-            <h1>Update store</h1>
-
-            <form:form data-ajax="false" action="/stores/update" method="post">
-                <input type="hidden" value="${id}" name="id">
-                <input type="text" name="name" value="${store.name}">
-                <input type="text" name="city" value="${store.city}">
-
-                <button type="submit">Update</button>
-            </form:form>
-              
-        </div>
-
+            <button type="submit">Update</button>
+        </form:form>
     </div>
 
 </div>
 
-<div data-role="dialog" id="dialog">
-    <div data-role="header">
-        <h1>Create job type</h1>
-    </div>
-    <div data-role="content">
-        <form:form data-ajax="false" action="/jobtype/create" method="post">
 
-            <input type="hidden" value="${store.id}" name="storeId">
-            <p>Enter jobtype:</p><input name="type" id="type">
-            <p>Enter price:</p><input name="pricePerHour" type="number" id="pricePerHour">
-            <p></p>
-            <button type="submit">Create</button>
-
-        </form:form>
-    </div>
 </div>
 
 </body>

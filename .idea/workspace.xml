@@ -7,8 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="711af942-5f43-44c5-8da2-03e44546e72c" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/nav.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/git-stats.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/main.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/service/gmail/MailService.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/service/gmail/MailService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/store.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/store.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stores.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/stores.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/store.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/store.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/store.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/store.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,105 +43,106 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JobTypeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/JobTypeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MailService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/service/gmail/MailService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="826">
-              <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GmailAuthenticator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/service/gmail/GmailAuthenticator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-              <folding>
-                <element signature="e#421#671#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JobTypeServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/service/impl/JobTypeServiceImpl.java">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoreServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/service/impl/StoreServiceImpl.java">
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JobTypeService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/service/JobTypeService.java">
+      <file leaf-file-name="git-stats.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/git-stats.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="193">
+              <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+              <folding>
+                <marker date="1525718267381" expanded="true" signature="1151:1167" ph="..." />
+                <marker date="1525718267381" expanded="true" signature="1530:1547" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoreService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/service/StoreService.java">
+      <file leaf-file-name="nav.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/nav.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="34">
+              <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+              <folding>
+                <element signature="n#style#0;n#h3#0;n#a#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/config/WebConfig.java">
+      <file leaf-file-name="stores.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/stores.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="15" column="67" lean-forward="false" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppInitializer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/config/AppInitializer.java">
+      <file leaf-file-name="store.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/store.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="67" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/store.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+              <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RootConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/config/RootConfig.java">
+      <file leaf-file-name="toast.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/toast.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            <state relative-caret-position="363">
+              <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/store.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,11 +153,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -163,10 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/javamaster/controller/JobController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/javamaster/dao/sql/JobSQL.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jobs.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/updatemarket.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/static/store.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/store.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/updateStore.jsp" />
@@ -193,8 +198,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/store.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/config/RootConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/config/WebConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/store.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/stores.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/service/MainService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/service/MailService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/model/Store.java" />
@@ -205,15 +208,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/service/gmail/CheckingMails.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/imports.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/menu.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/store.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/controller/JobTypeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/controller/StoreController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/config/DataConnectionConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/service/gmail/MailService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/nav.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/store.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/store.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/git-stats.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/main.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/store.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/stores.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java" />
       </list>
     </option>
   </component>
@@ -325,59 +334,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="javamaster" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agencja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agencja" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javamaster" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agencja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agencja" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javamaster" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agencja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agencja" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javamaster" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agencja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agencja" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javamaster" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="gmail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="agencja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="agencja" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="javamaster" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="agencja" type="b2602c69:ProjectViewProjectNode" />
@@ -449,6 +406,9 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\Desktop\study\agencja\src\main\webapp\resources\js" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.javamaster.service.impl" />
     </key>
@@ -657,7 +617,7 @@
       <workItem from="1525596906736" duration="6796000" />
       <workItem from="1525611197443" duration="6237000" />
       <workItem from="1525633318646" duration="2494000" />
-      <workItem from="1525683410572" duration="10174000" />
+      <workItem from="1525683410572" duration="18798000" />
     </task>
     <task id="LOCAL-00001" summary="fix - controllers">
       <created>1520941797142</created>
@@ -799,11 +759,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525695229248</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="refactor - gmail service">
+      <created>1525696048445</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1525696048446</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118860000" />
+    <option name="totallyTimeSpent" value="127484000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -880,7 +847,8 @@
     <MESSAGE value="refactor - messages" />
     <MESSAGE value="refactor - mail service" />
     <MESSAGE value="add - config hibernate" />
-    <option name="LAST_COMMIT_MESSAGE" value="add - config hibernate" />
+    <MESSAGE value="refactor - gmail service" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor - gmail service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -893,16 +861,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/dao/StoreDao.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/stores.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jobs.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/welcome.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/JobTypeController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -973,27 +931,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/dao/sql/StoreSQL.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/dao/sql/JobTypeSQL.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jobs.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/toast.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/store.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.0.0.RELEASE/spring-core-4.0.0.RELEASE.jar!/org/springframework/core/env/PropertyResolver.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1043,44 +980,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/stores.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-827">
-          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/store.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1003">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/config/DataConnectionConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
           <caret line="67" column="49" lean-forward="false" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1114,7 +1019,7 @@
         <state relative-caret-position="826">
           <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1124,7 +1029,7 @@
         <state relative-caret-position="204">
           <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding>
-            <element signature="e#421#671#0" expanded="true" />
+            <element signature="e#421#671#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1172,15 +1077,100 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/config/RootConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/config/AppInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/nav.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#a#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/git-stats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+          <folding>
+            <marker date="1525718267381" expanded="true" signature="1151:1167" ph="..." />
+            <marker date="1525718267381" expanded="true" signature="1530:1547" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/store.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/store.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="67" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/stores.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="67" lean-forward="false" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/store.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/toast.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>

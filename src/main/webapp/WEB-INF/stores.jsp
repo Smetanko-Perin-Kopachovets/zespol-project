@@ -8,19 +8,23 @@
 <head>
 
     <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="<c:url value="/resources/js/store.js" />"></script>
+    <script src="<c:url value="/resources/js/main.js" />"></script>
     <style>
-        <%@include file="../resources/css/toast.css"%>
+        <%@include file="../resources/css/toast.css" %>
     </style>
+
 
     <title>Stores</title>
 
 </head>
 <body>
+
+<%@include file="nav.jsp" %>
 
 <form:form data-ajax="false" action="/stores/create" modelAttribute="store" method="post">
 
@@ -87,7 +91,7 @@
 <c:if test="${not empty message}">
     <div id="snackbar"><span>${message}</span></div>
     <script>
-        window.showToast();
+        showToast();
     </script>
 </c:if>
 
