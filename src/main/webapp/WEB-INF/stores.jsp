@@ -16,6 +16,7 @@
     <script src="<c:url value="/resources/js/main.js" />"></script>
     <style>
         <%@include file="../resources/css/toast.css" %>
+        <%@include file="../resources/css/main.css" %>
     </style>
 
 
@@ -25,68 +26,106 @@
 <body>
 
 <%@include file="nav.jsp" %>
+<section class="hero">
+    <div class="hero-body" style="padding: 10px">
+        <div class="container">
+            <h2 class="title">
+                Workplace page
+            </h2>
+            <h2 class="subtitle">
+                Serwis tymczasowego zatrudnienia
+                <br>
+                Below available workplace in database
+            </h2>
+            <div class="divider"></div>
+            <br>
 
-<form:form data-ajax="false" action="/stores/create" modelAttribute="store" method="post">
+            <div class="tile is-ancestor" id="contentAddWorkPlace">
 
-    <table>
-        <tr>
-            <td>Enter title:</td>
-            <td><form:input path="name"/></td>
-            <td><form:errors path="name" cssClass="error"/></td>
-        </tr>
-        <tr>
-            <td>Enter address:</td>
-            <td><form:input path="city"/></td>
-            <td><form:errors path="city" cssClass="error"/></td>
-        </tr>
-        <tr>
+                <div class="tile is-parent">
+                    <div class="tile is-parent is-8">
+                        <article class="tile is-child box ">
 
-            <button type="submit">Create</button>
+                            <table class="table is-fullwidth is-striped is-hoverable">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>More</th>
+                                </tr>
+                                </thead>
+                                <tbody>
 
-        </tr>
-    </table>
+                                <c:forEach items="${storeList}" var="store">
 
-</form:form>
+                                    <tr>
+                                        <td>${store.id}</td>
+                                        <td>${store.name}</td>
+                                        <td>${store.city}</td>
 
-<form>
-    <input id="filter" data-type="search">
-</form>
+                                        <td>
+                                            <form:form data-ajax="false" action="stores/get/${store.id}" method="get">
+                                                <button type="submit">More</button>
+                                            </form:form>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
 
-<table data-role="table"
-       data-column-btn-theme="b"
-       data-mode="columntoggle"
-       data-filter="true"
-       data-input="#filter"
-       class="ui-responsive table-stroke">
+                                </tbody>
 
-    <thead>
-       
-    <tr>
-        <th data-priority="1">ID</th>
-        <th data-priority="2">Name shop</th>
-        <th data-priority="3">Address</th>
-        <th data-priority="4">More</th>
-              
-    </tr>
-    </thead>
+                            </table>
+                        </article>
+                    </div>
 
-    <c:forEach items="${storeList}" var="store">
-        <tbody>
-        <tr>
-            <td>${store.id}</td>
-            <td>${store.name}</td>
-            <td>${store.city}</td>
+                    <div class="tile is-parent is-4">
+                        <article class="tile is-child box">
 
-            <td>
-                <form:form data-ajax="false" action="stores/get/${store.id}" method="get">
-                    <button type="submit">More</button>
-                </form:form>
-            </td>
-        </tr>
+                            <p class="subtitle">Form for adding new workplace </p>
+                            <form:form action="/stores/create" modelAttribute="store" method="post">
+                                <div class="field">
+                                    <p class="control has-icons-left has-icons-right">
+                                        <form:input path="name" class="input" placeholder="Title"/>
+                                        <span class="icon is-small is-left">
+											<i class="fas fa-book"></i>
+										</span>
+                                    </p>
+                                </div>
 
-        </tbody>
-    </c:forEach>
-</table>
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <form:input path="city" class="input" placeholder="City"/>
+                                        <span class="icon is-small is-left">
+											<i class="far fa-building"></i>
+										</span>
+                                    </p>
+                                </div>
+
+                                <div class="field">
+                                    <p class="control has-icons-left">
+                                        <input class="input" placeholder="Address"/>
+                                        <span class="icon is-small is-left">
+											<i class="fas fa-lock"></i>
+										</span>
+                                    </p>
+                                </div>
+
+                                <div class="box has-text-centered">
+
+                                    <button class="button is-medium">
+                                        <span>Create</span>
+                                    </button>
+
+                                </div>
+                            </form:form>
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <c:if test="${not empty message}">
     <div id="snackbar"><span>${message}</span></div>
