@@ -27,31 +27,37 @@
 
 <div class="tabs is-medium is-centered" id="tabs">
     <ul>
-        <li data-tab="1" id="changeContent1" class="is-active" onclick="changeContent1()"><a>Information</a></li>
+        <li data-tab="1" id="changeContent1" onclick="changeContent1()" class="is-active"><a>Information</a></li>
         <li data-tab="2" id="changeContent2" onclick="changeContent2()"><a>Job types</a></li>
-        <li data-tab="3" id="changeContent3" onclick="changeContent3()"><a>Update</a></li>
+        <li data-tab="3" id="changeContent3" onclick="changeContent3()"><a>Edit</a></li>
     </ul>
 </div>
 
 <div data-content="1" id="content1">
-    <div class="tile is-ancestor">
 
-        <div class="tile is-parent is-4">
-        </div>
-
-        <div class="tile is-parent is-4">
-            <article class="tile is-child box">
-
-                <p class="subtitle">Inforamtion about store </p>
-
+    <div class="card " style="margin-left: auto; margin-right: auto; width: 350px;">
+        <header class="card-header">
+            <p class="card-header-title">
+                Information about store
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+                <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+            </a>
+        </header>
+        <div class="card-content">
+            <div class="content">
                 <p>${store.id}</p>
                 <p>${store.name}</p>
                 <p>${store.city}</p>
-
-                <a class="button" href="/stores/delete/${store.id}">Remove</a>
-
-            </article>
+                <p>Contains - ${jobTypesCount} job types</p>
+            </div>
         </div>
+        <footer class="card-footer">
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="/stores/delete/${store.id}" class="card-footer-item">Delete</a>
+        </footer>
     </div>
 </div>
 
@@ -156,7 +162,6 @@
                         </p>
                     </div>
 
-
                     <div class="field">
                         <p class="control has-icons-left">
                             <input type="text" class="input" name="city" value="${store.city}">
@@ -167,7 +172,7 @@
                     </div>
 
                     <div class="box has-text-centered">
-                        <button type="submit" class="button is-medium is-primary">
+                        <button type="submit" class="button is-primary">
                             <span>Update</span>
                         </button>
                     </div>

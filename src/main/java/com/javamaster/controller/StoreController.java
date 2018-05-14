@@ -92,6 +92,7 @@ public class StoreController {
         model.addAttribute("id", id);
         model.addAttribute("store", store);
         model.addAttribute("jobTypes", jobTypes);
+        model.addAttribute("jobTypesCount", jobTypes.size());
         return "store";
 
     }

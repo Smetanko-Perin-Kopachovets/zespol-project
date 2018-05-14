@@ -38,16 +38,18 @@
 
         <div class="navbar-end">
             <div class="navbar-item">
-						<span class="icon">
-							<i class="fas fa-chevron-right"></i>
-						</span>
 
-                <a class="button is-primary" href="https://github.com/Smetanko-Perin-Kopachovets/zespol-project">
-							<span class="icon">
-								<i class="fab fa-git fa-2x"></i>
-							</span>
+                <span class="icon">
+                    <i class="fas fa-chevron-right"></i>
+                </span>
 
+                <a class="button" href="https://github.com/Smetanko-Perin-Kopachovets/zespol-project">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>GitHub</span>
                 </a>
+
 
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
