@@ -3,3 +3,15 @@
     height: 1px;
     margin-bottom: 5px;
 }
+
+#content1 {
+    display: block;
+}
+
+#content2 {
+    display: none;
+}
+
+#content3 {
+    display: none;
+}

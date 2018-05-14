@@ -55,23 +55,18 @@
                                     <th>More</th>
                                 </tr>
                                 </thead>
+
                                 <tbody>
-
                                 <c:forEach items="${storeList}" var="store">
-
                                     <tr>
                                         <td>${store.id}</td>
                                         <td>${store.name}</td>
                                         <td>${store.city}</td>
-
                                         <td>
-                                            <form:form data-ajax="false" action="stores/get/${store.id}" method="get">
-                                                <button type="submit">More</button>
-                                            </form:form>
+                                            <a href="stores/get/${store.id}" class="button is-primary is-small">More</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
-
                                 </tbody>
 
                             </table>
@@ -94,7 +89,7 @@
 
                                 <div class="field">
                                     <p class="control has-icons-left">
-                                        <form:input path="city" class="input" placeholder="City"/>
+                                        <input name="type" class="input" placeholder="City"/>
                                         <span class="icon is-small is-left">
 											<i class="far fa-building"></i>
 										</span>
@@ -103,7 +98,7 @@
 
                                 <div class="field">
                                     <p class="control has-icons-left">
-                                        <input class="input" placeholder="Address"/>
+                                        <input name="pricePerHour" type="number" class="input" placeholder="Address"/>
                                         <span class="icon is-small is-left">
 											<i class="fas fa-lock"></i>
 										</span>
@@ -112,7 +107,7 @@
 
                                 <div class="box has-text-centered">
 
-                                    <button class="button is-medium">
+                                    <button class="button is-medium is-primary">
                                         <span>Create</span>
                                     </button>
 
