@@ -39,21 +39,20 @@
         <div class="navbar-end">
             <div class="navbar-item">
 
-                <span class="icon">
-                    <i class="fas fa-chevron-right"></i>
-                </span>
-
-                <a class="button" href="https://github.com/Smetanko-Perin-Kopachovets/zespol-project">
+                <a class="button" style="margin-right: 20px" href="https://github.com/Smetanko-Perin-Kopachovets/zespol-project">
                     <span class="icon">
                         <i class="fab fa-github"></i>
                     </span>
                     <span>GitHub</span>
                 </a>
 
+                <a class="button" href="/sendMail">
+                    <span class="icon">
+                        <i class="far fa-envelope"></i>
+                    </span>
+                    <span>SendMail</span>
+                </a>
 
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
 
             </div>
         </div>

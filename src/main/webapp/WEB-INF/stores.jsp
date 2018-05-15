@@ -52,7 +52,7 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
-                                    <th>More</th>
+                                    <th>Details</th>
                                 </tr>
                                 </thead>
 
@@ -89,29 +89,28 @@
 
                                 <div class="field">
                                     <p class="control has-icons-left">
-                                        <input name="type" class="input" placeholder="City"/>
+                                        <form:input  path="city" class="input" placeholder="City"/>
                                         <span class="icon is-small is-left">
 											<i class="far fa-building"></i>
 										</span>
                                     </p>
                                 </div>
 
-                                <div class="field">
-                                    <p class="control has-icons-left">
-                                        <input name="pricePerHour" type="number" class="input" placeholder="Address"/>
-                                        <span class="icon is-small is-left">
-											<i class="fas fa-lock"></i>
-										</span>
-                                    </p>
-                                </div>
+                                <%--<div class="field">--%>
+                                    <%--<p class="control has-icons-left">--%>
+                                        <%--<input name="pricePerHour" type="number" class="input" placeholder="Address"/>--%>
+                                        <%--<span class="icon is-small is-left">--%>
+											<%--<i class="fas fa-lock"></i>--%>
+										<%--</span>--%>
+                                    <%--</p>--%>
+                                <%--</div>--%>
 
                                 <div class="box has-text-centered">
-
-                                    <button class="button is-medium is-primary">
+                                    <button type="submit" class="button is-primary">
                                         <span>Create</span>
                                     </button>
-
                                 </div>
+
                             </form:form>
 
                         </article>

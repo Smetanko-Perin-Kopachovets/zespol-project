@@ -4,6 +4,7 @@ import com.javamaster.model.JobType;
 import com.javamaster.model.Store;
 import com.javamaster.service.JobTypeService;
 import com.javamaster.service.StoreService;
+import com.javamaster.service.gmail.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,11 +26,13 @@ public class StoreController {
 
     private StoreService storeService;
     private JobTypeService jobTypeService;
+    private MailService mailService;
 
     @Autowired
-    public StoreController(StoreService storeService, JobTypeService jobTypeService) {
+    public StoreController(StoreService storeService, JobTypeService jobTypeService, MailService mailService) {
         this.storeService = storeService;
         this.jobTypeService = jobTypeService;
+        this.mailService = mailService;
     }
 
     @RequestMapping(value = "/stores", method = RequestMethod.GET)
@@ -44,6 +47,7 @@ public class StoreController {
                               BindingResult result,
                               RedirectAttributes redirectAttributes) {
 
+        System.out.println(store.getName() + " " + store.getCity());
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("message", "Failed");
             return "redirect:/stores";
@@ -95,6 +99,13 @@ public class StoreController {
         model.addAttribute("jobTypesCount", jobTypes.size());
         return "store";
 
+    }
+
+    @RequestMapping(value="/sendMail", method = RequestMethod.GET)
+    public String sendMail(RedirectAttributes redirectAttributes) {
+        mailService.sendEmail("andriismetanko@gmail.com", "Test title");
+        redirectAttributes.addFlashAttribute("message", "Mail sended");
+        return "redirect:/stores";
     }
 
 }

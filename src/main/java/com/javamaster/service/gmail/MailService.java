@@ -69,10 +69,11 @@ public class MailService {
             message.setSubject(subject);
             message.setContent(
                     "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXILbBYCMTgMvu56rjlmRk0iqZySEwS0gPCVi1gNQgU318RkyFPQ' />" +
-                            "<h3 > Title </h3>" +
-                            "<p> Body </p>" +
-                            "<a href='http://localhost:8088/'> <button> Service </button> </a>"
-
+                            "<div style='align=center;'>" +
+                            "<h3> Test title </h3>" +
+                            "<p> Test mail </p>" +
+                            "<a href='http://localhost:8088/'> <button> Service </button> </a>" +
+                            "</div>"
                     , "text/html");
 
             Transport transport = session.getTransport("smtp");
