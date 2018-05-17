@@ -24,8 +24,10 @@
 
 </head>
 <body>
+<sec:authentication var="principal" property="principal" />
 
 <%@include file="nav.jsp" %>
+
 <section class="hero">
     <div class="hero-body" style="padding: 10px">
         <div class="container">

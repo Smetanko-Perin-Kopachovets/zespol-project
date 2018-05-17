@@ -1,4 +1,4 @@
-package com.javamaster.service;
+package com.javamaster.service.entity;
 
 import com.javamaster.model.JobType;
 

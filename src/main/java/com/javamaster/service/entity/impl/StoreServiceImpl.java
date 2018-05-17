@@ -1,9 +1,9 @@
-package com.javamaster.service.impl;
+package com.javamaster.service.entity.impl;
 
 
 import com.javamaster.dao.StoreRepository;
 import com.javamaster.model.Store;
-import com.javamaster.service.StoreService;
+import com.javamaster.service.entity.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

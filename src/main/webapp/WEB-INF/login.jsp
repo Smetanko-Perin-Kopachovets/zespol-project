@@ -14,6 +14,7 @@
         <%@include file="../resources/css/main.css" %>
         <%@include file="../resources/css/toast.css" %>
     </style>
+
     <title>Login</title>
 </head>
 <body>
@@ -59,7 +60,7 @@
                         </script>
                     </c:if>
 
-                    <button class="button is-primary" type="submit">
+                    <button class="button is-primary " type="submit">
                         Sign in
                     </button>
 

@@ -3,8 +3,8 @@ package com.javamaster.controller;
 import com.javamaster.model.JobType;
 import com.javamaster.model.Store;
 
-import com.javamaster.service.JobTypeService;
-import com.javamaster.service.StoreService;
+import com.javamaster.service.entity.JobTypeService;
+import com.javamaster.service.entity.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

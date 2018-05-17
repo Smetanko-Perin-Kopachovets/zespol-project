@@ -22,6 +22,7 @@
     <title>Store</title>
 </head>
 <body>
+<sec:authentication var="principal" property="principal" />
 
 <%@include file="nav.jsp" %>
 

@@ -1,9 +1,9 @@
-package com.javamaster.service.impl;
+package com.javamaster.service.entity.impl;
 
 
 import com.javamaster.dao.JobTypeRepository;
 import com.javamaster.model.JobType;
-import com.javamaster.service.JobTypeService;
+import com.javamaster.service.entity.JobTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -3,7 +3,7 @@
         <i class="fab fa-accusoft fa-3x"></i>
         <a class="navbar-item">
 
-            <h3 style='font-size: 20px; font-weight: 500'>
+            <h3 style='font-size: 18px; font-weight: 400'>
                 Tempempl
             </h3>
         </a>
@@ -29,15 +29,15 @@
                     <a class="navbar-link">
                         ${principal.email}
                     </a>
-                    <div class="navbar-dropdown is-boxed">
-                        <a class="navbar-item">
-                            Something
+                    <div class="navbar-dropdown is-boxed has-text-centered">
+                        <a class="navbar-item is-center ">
+                            Account
                         </a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            <form action="/logout" method="post">
-                                <input value="Logout" type="submit">
-                            </form>
+                        <a class="navbar-item ">
+                            <a href="/logout" class="button is-small is-danger">
+                                Logout
+                            </a>
                         </a>
                     </div>
                 </div>
