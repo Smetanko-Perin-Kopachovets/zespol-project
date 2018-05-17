@@ -3,7 +3,7 @@
         <i class="fab fa-accusoft fa-3x"></i>
         <a class="navbar-item">
 
-            <h3 style='font-size: 20px; color: teal; font-weight: 500'>
+            <h3 style='font-size: 20px; font-weight: 500'>
                 Tempempl
             </h3>
         </a>
@@ -20,26 +20,30 @@
             <a class="navbar-item" href="/stores">
                 Stores
             </a>
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    Dropdown
-                </a>
-                <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item">
-                        Something
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                        Something
-                    </a>
-                </div>
-            </div>
         </div>
 
         <div class="navbar-end">
             <div class="navbar-item">
 
-                <a class="button" style="margin-right: 20px" href="https://github.com/Smetanko-Perin-Kopachovets/zespol-project">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        ${principal.email}
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item">
+                            Something
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            <form action="/logout" method="post">
+                                <input value="Logout" type="submit">
+                            </form>
+                        </a>
+                    </div>
+                </div>
+
+                <a class="button" style="margin-right: 20px"
+                   href="https://github.com/Smetanko-Perin-Kopachovets/zespol-project">
                     <span class="icon">
                         <i class="fab fa-github"></i>
                     </span>

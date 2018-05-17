@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class JobType {
 
     @Id
-    //Strategy not AUTO, cuz postgres id type: serial
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

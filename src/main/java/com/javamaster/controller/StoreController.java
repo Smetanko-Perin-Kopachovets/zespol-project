@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,7 +37,8 @@ public class StoreController {
     }
 
     @RequestMapping(value = "/stores", method = RequestMethod.GET)
-    public String loadPage(Model model) {
+    public String loadPage(Model model, Principal principal) {
+        System.out.println("user " + principal.getName());
         model.addAttribute("storeList", storeService.getAll());
         model.addAttribute("store", new Store());
         return "stores";
