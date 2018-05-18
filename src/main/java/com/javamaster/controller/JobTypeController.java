@@ -25,13 +25,13 @@ public class JobTypeController {
         this.storeService = storeService;
     }
 
-    @RequestMapping(value = "/jobtype", method = RequestMethod.GET)
-    public String loadPage(Model model) {
-        model.addAttribute("storeList", storeService.getAll());
-        model.addAttribute("jobTypeList", jobTypeService.getAll());
-
-        return "jobType";
-    }
+//    @RequestMapping(value = "/jobtype", method = RequestMethod.GET)
+//    public String loadPage(Model model) {
+//        model.addAttribute("storeList", storeService.getAll());
+//        model.addAttribute("jobTypeList", jobTypeService.getAll());
+//
+//        return "jobType";
+//    }
 
     @RequestMapping(value = "jobtype/create", method = RequestMethod.POST)
     public String createJobType(@RequestParam("type") String type,

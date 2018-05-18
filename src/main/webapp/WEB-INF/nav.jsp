@@ -17,6 +17,10 @@
             <a class="navbar-item" href="/stores">
                 Stores
             </a>
+
+            <a class="navbar-item" href="/jobs">
+                Jobs
+            </a>
         </div>
 
         <div class="navbar-end">
