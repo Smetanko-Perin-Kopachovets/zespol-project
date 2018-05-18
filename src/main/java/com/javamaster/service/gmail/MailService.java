@@ -34,7 +34,7 @@ public class MailService {
     private static final String PROP_MAIL_HOST = "mail.smtp.host";
     private static final String PROP_LOCALHOST = "localhost";
 
-    public void sendEmail(String mailTo, String subject) {
+    public void sendEmail(String mailTo, String subject, String bodyText) {
 
         String[] arrayTo = {mailTo};
 
@@ -70,9 +70,9 @@ public class MailService {
             message.setContent(
                     "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXILbBYCMTgMvu56rjlmRk0iqZySEwS0gPCVi1gNQgU318RkyFPQ' />" +
                             "<div style='align=center;'>" +
-                            "<h3> Test title </h3>" +
-                            "<p> Test mail </p>" +
-                            "<a href='http://localhost:8088/'> <button> Service </button> </a>" +
+                            "<h3> Auto-mailed </h3>" +
+                            "<p> " + bodyText + " </p>" +
+                            "<a href='http://localhost:8088/'> <button> GO Service </button> </a>" +
                             "</div>"
                     , "text/html");
 

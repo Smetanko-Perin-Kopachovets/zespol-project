@@ -25,7 +25,6 @@ public class MainController {
 
     @RequestMapping("/")
     public String loadPage() {
-//	    mailService.sendEmail("andriismetanko@gmail.com", "test");
         return "main";
     }
 
@@ -35,10 +34,10 @@ public class MainController {
             @RequestParam(value = "logout", required = false) String logout,
             Model model) {
         if (error != null) {
-            model.addAttribute("errorMessage", "Invalid login or password");
+            model.addAttribute("message", "Invalid login or password");
         }
         if (logout != null) {
-            model.addAttribute("logoutMessage", "You've been logged out successfully");
+            model.addAttribute("message", "You've been logged out successfully");
         }
 
         return "login";
@@ -50,25 +49,35 @@ public class MainController {
                                @RequestParam("email") String email,
                                @RequestParam("password") String password,
                                @RequestParam("address") String address,
-                               RedirectAttributes redirectAttributes
-    ) {
+                               RedirectAttributes redirectAttributes) {
 
-        Role role = roleService.getById(2L);
-        User user = new User(firstName, lastName, email, password, address, role);
-        User createdUser = userService.create(user);
+        if (userService.getUserByEmail(email) == null) {
 
-        if (createdUser != null) {
-            String message = "" + createdUser.getFirstName() + ", your account created";
-            redirectAttributes.addFlashAttribute("message", message);
+            Role role = roleService.getById(2L);
+            User user = new User(firstName, lastName, email, password, address, role);
+            User createdUser = userService.create(user);
+
+            if (createdUser != null) {
+                //sendMailRegistration(createdUser);
+                String message = "" + createdUser.getFirstName() + ", your account created";
+                redirectAttributes.addFlashAttribute("message", message);
+
+            } else {
+                String message = "Something went wrong";
+                redirectAttributes.addFlashAttribute("message", message);
+            }
 
         } else {
-            String message = "something went wrong";
+            String message = "User with this email already exist";
             redirectAttributes.addFlashAttribute("message", message);
-
         }
         return "redirect:/login";
-
     }
 
+    public void sendMailRegistration(User createdUser) {
+        mailService.sendEmail(createdUser.getEmail(),
+                "Registration in service",
+                "Your account successfully created");
+    }
 
 }

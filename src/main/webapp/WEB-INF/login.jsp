@@ -152,15 +152,8 @@
     </div>
 </div>
 
-<c:if test="${errorMessage != null}">
-    <div id="snackbar"><span>${errorMessage}</span></div>
-    <script>
-        showToast();
-    </script>
-</c:if>
-
-<c:if test="${logoutMessage != null}">
-    <div id="snackbar"><span>${logoutMessage}</span></div>
+<c:if test="${message != null}">
+    <div id="snackbar"><span>${message}</span></div>
     <script>
         showToast();
     </script>
