@@ -52,7 +52,7 @@
 
                     <div class="field">
                         <p class="control has-icons-left ">
-                            <input placeholder="Email" type="text" class="input" name="email">
+                            <input placeholder="Email" type="text" required class="input" name="email">
                             <span class="icon is-small is-left">
 							<i class="far fa-envelope"></i></span>
                         </p>
@@ -60,7 +60,7 @@
 
                     <div class="field">
                         <p class="control has-icons-left ">
-                            <input placeholder="Password" type="password" class="input" name="password">
+                            <input placeholder="Password" type="password" required class="input" name="password">
                             <span class="icon is-small is-left">
 							<i class="fas fa-key"></i></span>
                         </p>
@@ -98,7 +98,7 @@
 
                         <div class="column">
                             <p class="control has-icons-left ">
-                                <input placeholder="Email" type="text" class="input" name="email">
+                                <input placeholder="Email" type="text" required class="input" name="email">
                                 <span class="icon is-small is-left">
 							<i class="far fa-envelope"></i></span>
                             </p>
@@ -106,7 +106,7 @@
 
                         <div class="column">
                             <p class="control has-icons-left ">
-                                <input placeholder="Password" type="password" class="input" name="password">
+                                <input placeholder="Password" type="password" required class="input" name="password">
                                 <span class="icon is-small is-left">
 							<i class="fas fa-key"></i></span>
                             </p>
@@ -118,7 +118,7 @@
 
                         <div class="column">
                             <p class="control has-icons-left ">
-                                <input placeholder="First name" type="text" class="input" name="firstName">
+                                <input placeholder="First name" type="text" required class="input" name="firstName">
                                 <span class="icon is-small is-left">
 							<i class="fas fa-book"></i></span>
                             </p>
@@ -126,7 +126,7 @@
 
                         <div class="column">
                             <p class="control has-icons-left ">
-                                <input placeholder="Last name" type="text" class="input" name="lastName">
+                                <input placeholder="Last name" type="text" required class="input" name="lastName">
                                 <span class="icon is-small is-left">
 							<i class="fas fa-book"></i></span>
                             </p>
@@ -136,7 +136,7 @@
 
                     <div class="field">
                         <p class="control has-icons-left ">
-                            <input placeholder="Address" type="text" class="input" name="address">
+                            <input placeholder="Address" type="text" required class="input" name="address">
                             <span class="icon is-small is-left">
 							<i class="fas fa-location-arrow"></i></span>
                         </p>
