@@ -32,8 +32,8 @@ public class User {
     @Column(name = "address", nullable = false)
     private String address;
 
-//    @OneToOne
-//    @JoinColumn(name = "user_roles_id", nullable = false)
+    @OneToOne
+    @JoinColumn(name = "user_roles_id", nullable = false)
     private Role role;
 
     public User() {

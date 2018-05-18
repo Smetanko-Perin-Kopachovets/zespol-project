@@ -3,9 +3,6 @@
         <i class="fab fa-accusoft fa-3x"></i>
         <a class="navbar-item">
 
-            <h3 style='font-size: 18px; font-weight: 400'>
-                Tempempl
-            </h3>
         </a>
 
         <div class="navbar-burger burger" data-target="navbar">
@@ -25,17 +22,19 @@
         <div class="navbar-end">
             <div class="navbar-item">
 
-                <div class="navbar-item has-dropdown is-hoverable">
+                <div class="navbar-item has-dropdown is-hoverable has-text-centered">
                     <a class="navbar-link">
                         ${principal.email}
                     </a>
                     <div class="navbar-dropdown is-boxed has-text-centered">
-                        <a class="navbar-item is-center ">
-                            Account
+                        <a class="navbar-item  ">
+                            <a href="/#" class="button ">
+                                Account
+                            </a>
                         </a>
                         <hr class="navbar-divider">
                         <a class="navbar-item ">
-                            <a href="/logout" class="button is-small is-danger">
+                            <a href="/logout" class="button is-danger">
                                 Logout
                             </a>
                         </a>

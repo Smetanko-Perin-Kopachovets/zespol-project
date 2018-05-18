@@ -2,6 +2,7 @@ package com.javamaster.dao.impl;
 
 import com.javamaster.model.Role;
 import com.javamaster.model.User;
+import com.javamaster.service.entity.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -22,12 +23,14 @@ public class UserDaoImpl {
     private DataSource dataSource;
     private NamedParameterJdbcTemplate jdbcTemplate;
     private UserExtractor userExtractor;
+    private RoleService roleService;
 
     @Autowired
-    public UserDaoImpl(DataSource dataSource) {
+    public UserDaoImpl(DataSource dataSource, RoleService roleService) {
         this.dataSource = dataSource;
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
         this.userExtractor = new UserExtractor();
+        this.roleService = roleService;
     }
 
 
@@ -57,7 +60,9 @@ public class UserDaoImpl {
                 user.setFirstName(resultSet.getString("name"));
                 user.setLastName(resultSet.getString("last_name"));
                 user.setPassword(resultSet.getString("password"));
-                user.setRole(Role.valueOf(resultSet.getString("role")));
+
+                Role role = roleService.getById(resultSet.getLong("user_roles_id"));
+                user.setRole(role);
 
                 users.add(user);
             }

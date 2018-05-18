@@ -1,18 +1,25 @@
 package com.javamaster.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 
-import static javax.persistence.GenerationType.IDENTITY;
 
-public enum Role {
+@Entity
+@Table(name = "user_roles")
+public class Role {
 
-    ROLE_MANAGER(1, "ROLE_MANAGER"),
-    ROLE_WORKER(2, "ROLE_WORKER");
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotEmpty
+    @Column(name = "role", nullable = false)
     private String name;
 
-    Role(Integer id, String role) {
+    public Role() {}
+
+    public Role(Integer id, String role) {
         this.id = id;
         this.name = role;
     }
