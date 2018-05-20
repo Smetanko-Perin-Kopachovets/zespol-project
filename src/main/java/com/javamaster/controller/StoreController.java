@@ -104,8 +104,9 @@ public class StoreController {
     }
 
     @RequestMapping(value="/sendMail", method = RequestMethod.GET)
-    public String sendMail(RedirectAttributes redirectAttributes) {
-        //mailService.sendEmail("andriismetanko@gmail.com", "Test title", "body text");
+    public String sendMail(RedirectAttributes redirectAttributes, Principal principal) {
+
+        mailService.sendEmail(principal.getName(), "Test title", "body text");
         redirectAttributes.addFlashAttribute("message", "Mail sended");
         return "redirect:/stores";
     }

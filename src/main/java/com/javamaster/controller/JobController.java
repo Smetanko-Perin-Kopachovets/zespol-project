@@ -72,7 +72,6 @@ public class JobController {
     @RequestMapping(value = "/jobs/delete/{id}", method = RequestMethod.GET)
     public ModelAndView deleteByid(@PathVariable("id") Long id,
                                    RedirectAttributes redirectAttributes) {
-;
         jobService.delete(id);
         redirectAttributes.addFlashAttribute("message", "Success deleted item with id - " + id);
         return new ModelAndView("redirect:/jobs");

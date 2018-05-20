@@ -9,6 +9,7 @@ import java.util.Date;
 @Entity
 @Table(name = "job")
 public class Job {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,9 +34,7 @@ public class Job {
     private Float salary;
 
 
-    public Job() {
-
-    }
+    public Job() { }
 
     public Job(JobType jobType, Float salary, LocalTime dateTimeFrom, LocalTime dateTimeTo) {
         this.jobType = jobType;

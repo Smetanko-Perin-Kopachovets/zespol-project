@@ -23,7 +23,7 @@
     <title>Store</title>
 </head>
 <body>
-<sec:authentication var="principal" property="principal" />
+<sec:authentication var="principal" property="principal"/>
 
 <%@include file="nav.jsp" %>
 
@@ -31,7 +31,9 @@
     <ul>
         <li data-tab="1" id="changeContent1" onclick="changeContent1()" class="is-active"><a>Information</a></li>
         <li data-tab="2" id="changeContent2" onclick="changeContent2()"><a>Job types</a></li>
-        <li data-tab="3" id="changeContent3" onclick="changeContent3()"><a>Edit</a></li>
+        <sec:authorize access="hasRole('ROLE_MANAGER')">
+            <li data-tab="3" id="changeContent3" onclick="changeContent3()"><a>Edit</a></li>
+        </sec:authorize>
     </ul>
 </div>
 
@@ -57,8 +59,10 @@
             </div>
         </div>
         <footer class="card-footer">
-            <a href="#" class="card-footer-item">Edit</a>
-            <a href="/stores/delete/${store.id}" class="card-footer-item">Delete</a>
+            <sec:authorize access="hasRole('ROLE_MANAGER')">
+                <a href="#" class="card-footer-item">Edit</a>
+                <a href="/stores/delete/${store.id}" class="card-footer-item">Delete</a>
+            </sec:authorize>
         </footer>
     </div>
 </div>
@@ -101,38 +105,40 @@
                 </article>
             </div>
 
-            <div class="tile is-parent is-4">
-                <article class="tile is-child box">
-                    <form:form method="post" action="/jobtype/create">
+            <sec:authorize access="hasRole('ROLE_MANAGER')">
+                <div class="tile is-parent is-4">
+                    <article class="tile is-child box">
+                        <form:form method="post" action="/jobtype/create">
 
-                        <p class="subtitle">Add job type </p>
+                            <p class="subtitle">Add job type </p>
 
-                        <input value="${store.id}" name="storeId" type="hidden">
+                            <input value="${store.id}" name="storeId" type="hidden">
 
-                        <div class="field">
-                            <p class="control has-icons-left ">
-                                <input placeholder="Title" type="text" class="input" name="type">
-                                <span class="icon is-small is-left">
+                            <div class="field">
+                                <p class="control has-icons-left ">
+                                    <input placeholder="Title" type="text" class="input" name="type">
+                                    <span class="icon is-small is-left">
 							<i class="fas fa-book"></i></span>
-                            </p>
-                        </div>
+                                </p>
+                            </div>
 
-                        <div class="field">
-                            <p class="control has-icons-left">
-                                <input placeholder="Price per hour" type="number" class="input" name="pricePerHour">
-                                <span class="icon is-small is-left">
+                            <div class="field">
+                                <p class="control has-icons-left">
+                                    <input placeholder="Price per hour" type="number" class="input" name="pricePerHour">
+                                    <span class="icon is-small is-left">
 							<i class="fas fa-book"></i>
 						</span>
-                            </p>
-                        </div>
+                                </p>
+                            </div>
 
-                        <div class="box has-text-centered">
-                            <button class="button is-primary" type="submit">Create</button>
-                        </div>
+                            <div class="box has-text-centered">
+                                <button class="button is-primary" type="submit">Create</button>
+                            </div>
 
-                    </form:form>
-                </article>
-            </div>
+                        </form:form>
+                    </article>
+                </div>
+            </sec:authorize>
         </div>
     </div>
 </div>

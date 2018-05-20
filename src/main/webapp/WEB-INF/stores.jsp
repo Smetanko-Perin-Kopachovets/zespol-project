@@ -25,7 +25,7 @@
 
 </head>
 <body>
-<sec:authentication var="principal" property="principal" />
+<sec:authentication var="principal" property="principal"/>
 
 <%@include file="nav.jsp" %>
 
@@ -75,49 +75,41 @@
                             </table>
                         </article>
                     </div>
+                    <sec:authorize access="hasRole('ROLE_MANAGER')">
+                        <div class="tile is-parent is-4">
+                            <article class="tile is-child box">
 
-                    <div class="tile is-parent is-4">
-                        <article class="tile is-child box">
-
-                            <p class="subtitle">Form for adding new workplace </p>
-                            <form:form action="/stores/create" modelAttribute="store" method="post">
-                                <div class="field">
-                                    <p class="control has-icons-left has-icons-right">
-                                        <form:input path="name" class="input" placeholder="Title"/>
-                                        <span class="icon is-small is-left">
+                                <p class="subtitle">Form for adding new workplace </p>
+                                <form:form action="/stores/create" modelAttribute="store" method="post">
+                                    <div class="field">
+                                        <p class="control has-icons-left has-icons-right">
+                                            <form:input path="name" class="input" placeholder="Title"/>
+                                            <span class="icon is-small is-left">
 											<i class="fas fa-book"></i>
 										</span>
-                                    </p>
-                                </div>
+                                        </p>
+                                    </div>
 
-                                <div class="field">
-                                    <p class="control has-icons-left">
-                                        <form:input  path="city" class="input" placeholder="City"/>
-                                        <span class="icon is-small is-left">
+                                    <div class="field">
+                                        <p class="control has-icons-left">
+                                            <form:input path="city" class="input" placeholder="City"/>
+                                            <span class="icon is-small is-left">
 											<i class="far fa-building"></i>
 										</span>
-                                    </p>
-                                </div>
+                                        </p>
+                                    </div>
 
-                                <%--<div class="field">--%>
-                                    <%--<p class="control has-icons-left">--%>
-                                        <%--<input name="pricePerHour" type="number" class="input" placeholder="Address"/>--%>
-                                        <%--<span class="icon is-small is-left">--%>
-											<%--<i class="fas fa-lock"></i>--%>
-										<%--</span>--%>
-                                    <%--</p>--%>
-                                <%--</div>--%>
+                                    <div class="box has-text-centered">
+                                        <button type="submit" class="button is-primary">
+                                            <span>Create</span>
+                                        </button>
+                                    </div>
 
-                                <div class="box has-text-centered">
-                                    <button type="submit" class="button is-primary">
-                                        <span>Create</span>
-                                    </button>
-                                </div>
+                                </form:form>
 
-                            </form:form>
-
-                        </article>
-                    </div>
+                            </article>
+                        </div>
+                    </sec:authorize>
                 </div>
             </div>
         </div>
