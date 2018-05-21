@@ -192,6 +192,12 @@
     </div>
 </div>
 
+<c:if test="${not empty message}">
+    <div id="snackbar"><span>${message}</span></div>
+    <script>
+        showToast();
+    </script>
+</c:if>
 
 </body>
 </html>
