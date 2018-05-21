@@ -160,7 +160,7 @@
 
                     <div class="field">
                         <p class="control has-icons-left has-icons-right">
-                            <input type="text" class="input" name="name" value="${store.name}">
+                            <input type="text" required class="input" name="name" value="${store.name}">
                             <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -172,7 +172,7 @@
 
                     <div class="field">
                         <p class="control has-icons-left">
-                            <input type="text" class="input" name="city" value="${store.city}">
+                            <input type="text" required class="input" name="city" value="${store.city}">
                             <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>
@@ -181,7 +181,7 @@
 
                     <div class="field">
                         <p class="control has-icons-left">
-                            <input type="text" class="input" name="city" value="${store.street}">
+                            <input type="text" required class="input" name="street" value="${store.street}">
                             <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                     </span>
