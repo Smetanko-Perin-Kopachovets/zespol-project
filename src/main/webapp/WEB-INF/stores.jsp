@@ -55,6 +55,7 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
+                                    <th>Street</th>
                                     <th>Details</th>
                                 </tr>
                                 </thead>
@@ -65,6 +66,7 @@
                                         <td>${store.id}</td>
                                         <td>${store.name}</td>
                                         <td>${store.city}</td>
+                                        <td>${store.street}</td>
                                         <td>
                                             <a href="stores/get/${store.id}" class="button is-primary is-small">More</a>
                                         </td>
@@ -93,6 +95,15 @@
                                     <div class="field">
                                         <p class="control has-icons-left">
                                             <form:input path="city" class="input" placeholder="City"/>
+                                            <span class="icon is-small is-left">
+											<i class="far fa-building"></i>
+										</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="field">
+                                        <p class="control has-icons-left">
+                                            <form:input path="street" class="input" placeholder="Street"/>
                                             <span class="icon is-small is-left">
 											<i class="far fa-building"></i>
 										</span>

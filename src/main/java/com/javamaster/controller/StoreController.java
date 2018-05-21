@@ -74,10 +74,11 @@ public class StoreController {
     public String updateShop(@RequestParam("id") Long id,
                              @RequestParam("name") String name,
                              @RequestParam("city") String city,
+                             @RequestParam("street") String street,
                              RedirectAttributes redirectAttributes) {
 
 
-        Store store = new Store(id, name, city);
+        Store store = new Store(id, name, city, street);
         Store updatedStore = storeService.update(store);
         if (updatedStore != null) {
             redirectAttributes.addFlashAttribute("message", "Success updated item with id - " + updatedStore.getId());

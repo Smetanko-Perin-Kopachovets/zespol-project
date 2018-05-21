@@ -20,10 +20,17 @@ public class Store {
     @Column(name = "city", nullable = false, length = 100)
     private String city;
 
-    public Store(Long id, String name, String city) {
+
+    @NotEmpty
+    @Column(name = "street", nullable = false, length = 120)
+    private String street;
+
+    public Store(Long id, String name, String city, String street) {
         this.id = id;
         this.name = name;
         this.city = city;
+        this.street = street;
+
     }
 
     public Store() { }
@@ -57,5 +64,12 @@ public class Store {
         this.city = city;
     }
 
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
 
 }
