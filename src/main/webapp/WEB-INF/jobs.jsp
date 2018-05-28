@@ -96,7 +96,7 @@
                                     <div class="field">
                                         <div class="control">
                                             <div class="select">
-                                                <select name="jobTypeId">
+                                                <select name="jobTypeId" required>
                                                     <label>JOB TYPE</label>
                                                     <option value="" disabled selected>Choose job type</option>
                                                     <c:forEach items="${jobTypeList}" var="jobType">
@@ -110,8 +110,7 @@
 
                                     <div class="field">
                                         <p class="control has-icons-left">
-                                            <input id="date" type="text" placeholder="Select day" class="datepicker"
-                                                   name="date"/>
+                                            <input id="date" type="text" placeholder="Select day" class="datepicker" name="date" required/>
                                             <span class="icon is-small is-left">
 											<%--<i class="far fa-building"></i>--%>
 										</span>
@@ -120,8 +119,7 @@
 
                                     <div class="field">
                                         <p class="control has-icons-left">
-                                            <input id="timeFrom" type="text" placeholder="Time from"
-                                                   class="timepicker is-medium" name="timeFrom"/>
+                                            <input id="timeFrom" type="text" placeholder="Time from" class="timepicker is-medium" name="timeFrom" required/>
                                             <span class="icon is-small is-left">
 											<%--<i class="far fa-building"></i>--%>
 										</span>
@@ -130,8 +128,7 @@
 
                                     <div class="field">
                                         <p class="control has-icons-left">
-                                            <input id="timeTo" type="text" placeholder="Time to" class="timepicker"
-                                                   name="timeTo"/>
+                                            <input id="timeTo" type="text" placeholder="Time to" class="timepicker" name="timeTo" required/>
                                             <span class="icon is-small is-left">
 											<%--<i class="far fa-building"></i>--%>
 										</span>

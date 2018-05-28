@@ -21,6 +21,10 @@
             <a class="navbar-item" href="/jobs">
                 Jobs
             </a>
+
+            <a class="navbar-item" href="/generatePDF">
+                PDF generator
+            </a>
         </div>
 
         <div class="navbar-end">

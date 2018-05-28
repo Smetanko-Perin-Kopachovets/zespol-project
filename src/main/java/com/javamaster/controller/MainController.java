@@ -2,16 +2,21 @@ package com.javamaster.controller;
 
 import com.javamaster.model.Role;
 import com.javamaster.model.User;
+import com.javamaster.service.PDFGenerator;
+import com.javamaster.service.entity.JobService;
 import com.javamaster.service.entity.RoleService;
 import com.javamaster.service.entity.UserService;
 import com.javamaster.service.gmail.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.InputStream;
 
 @Controller
 public class MainController {
@@ -39,7 +44,6 @@ public class MainController {
         if (logout != null) {
             model.addAttribute("message", "You've been logged out successfully");
         }
-
         return "login";
     }
 
@@ -58,7 +62,7 @@ public class MainController {
             User createdUser = userService.create(user);
 
             if (createdUser != null) {
-                //sendMailRegistration(createdUser);
+                sendMailRegistration(createdUser);
                 String message = "" + createdUser.getFirstName() + ", your account created";
                 redirectAttributes.addFlashAttribute("message", message);
 
@@ -74,10 +78,9 @@ public class MainController {
         return "redirect:/login";
     }
 
-    public void sendMailRegistration(User createdUser) {
+    private void sendMailRegistration(User createdUser) {
         mailService.sendEmail(createdUser.getEmail(),
                 "Registration in service",
                 "Your account successfully created");
     }
-
 }

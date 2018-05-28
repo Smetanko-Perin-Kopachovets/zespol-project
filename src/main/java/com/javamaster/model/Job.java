@@ -1,5 +1,8 @@
 package com.javamaster.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,6 +18,7 @@ public class Job {
     private Long id;
 
     @OneToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "jobtype_id_fk", nullable = false)
     private JobType jobType;
 
