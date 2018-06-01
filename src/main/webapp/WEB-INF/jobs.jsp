@@ -58,6 +58,8 @@
                                 <tr>
                                     <th>Position</th>
                                     <th>Date</th>
+                                    <th>Store</th>
+                                    <th>City</th>
                                     <th>Job-time</th>
                                     <th>Salary</th>
                                 </tr>
@@ -67,10 +69,12 @@
                                     <tr>
                                         <td>${Job.jobType.type}</td>
                                         <td>${Job.date}</td>
+                                        <td>${Job.jobType.store.name}</td>
+                                        <td>${Job.jobType.store.city}</td>
                                         <td>${Job.dateTimeFrom} - ${Job.dateTimeTo}</td>
                                         <td>${Job.salary}$</td>
                                         <td>
-                                            <a href="#">
+                                            <a href="/reservation/${Job.id}">
                                                 <i class="fas fa-wrench"></i>
                                             </a>
                                         </td>
@@ -100,7 +104,7 @@
                                                     <label>JOB TYPE</label>
                                                     <option value="" disabled selected>Choose job type</option>
                                                     <c:forEach items="${jobTypeList}" var="jobType">
-                                                        <option value="${jobType.id}"> ${jobType.type} ${jobType.store.city}
+                                                        <option value="${jobType.id}"> ${jobType.type} ${jobType.store.name} ${jobType.store.city}
                                                             - ${jobType.pricePerHour}</option>
                                                     </c:forEach>
                                                 </select>

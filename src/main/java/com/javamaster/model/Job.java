@@ -38,6 +38,12 @@ public class Job {
     private Float salary;
 
 
+    @OneToOne
+    @JoinColumn(name = "users_id_fk")
+    private User user;
+
+
+
     public Job() { }
 
     public Job(JobType jobType, Float salary, LocalTime dateTimeFrom, LocalTime dateTimeTo) {
@@ -108,4 +114,11 @@ public class Job {
         this.jobType = jobType;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

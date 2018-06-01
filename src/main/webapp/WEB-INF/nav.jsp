@@ -25,6 +25,10 @@
             <a class="navbar-item" href="/generatePDF">
                 PDF generator
             </a>
+
+            <a class="navbar-item" href="/reservation">
+                Reservation
+            </a>
         </div>
 
         <div class="navbar-end">

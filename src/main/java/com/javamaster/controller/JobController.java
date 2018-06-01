@@ -3,8 +3,12 @@ package com.javamaster.controller;
 
 import com.javamaster.model.Job;
 import com.javamaster.model.JobType;
+import com.javamaster.model.Reservation;
+import com.javamaster.model.User;
 import com.javamaster.service.entity.JobService;
 import com.javamaster.service.entity.JobTypeService;
+import com.javamaster.service.entity.ReservationService;
+import com.javamaster.service.entity.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,28 +19,33 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
 
 @Controller
 public class JobController {
-
+    private UserService userService;
     private JobService jobService;
     private JobTypeService jobTypeService;
+    private ReservationService reservationService;
+
 
     @Autowired
-    public JobController(JobService jobService, JobTypeService jobTypeService) {
+    public JobController(JobService jobService, JobTypeService jobTypeService, ReservationService reservationService, UserService userService) {
         this.jobService = jobService;
         this.jobTypeService = jobTypeService;
+        this.reservationService = reservationService;
+        this.userService = userService;
     }
 
     @RequestMapping(value = "/jobs", method = RequestMethod.GET)
-    public String loadPage(Model model) {
-        model.addAttribute("jobList", jobService.getAll());
+    public String loadPage(Principal principal,
+            Model model) {
+        User user = userService.getById(Long.parseLong(userService.getUserByEmail(principal.getName()).getId().toString()));
+        model.addAttribute("jobList", jobService.getFiltrListJob(user));
         model.addAttribute("jobTypeList", jobTypeService.getAll());
         model.addAttribute("job", new Job());
         return "jobs";

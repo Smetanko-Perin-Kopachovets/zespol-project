@@ -28,6 +28,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="postgresql-42.2.1.jre6" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:itextpdf:5.5.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:4.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.2.5.RELEASE" level="project" />
