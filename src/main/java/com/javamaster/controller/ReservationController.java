@@ -71,14 +71,18 @@ public class ReservationController {
 
 
     @RequestMapping(value = "/reservation/reject/{reservationId}", method = RequestMethod.GET)
-    public String rejectReservation(@PathVariable("reservationId") Long reservationId){
+    public String rejectReservation(@PathVariable("reservationId") Long reservationId,
+                                    RedirectAttributes redirectAttributes){
         reservationService.rejectReservation(reservationId);
+        redirectAttributes.addFlashAttribute("message", "Reservation " + reservationId + " reject");
         return "redirect:/reservation";
     }
 
     @RequestMapping(value = "/reservation/accept/{reservationJobId}", method = RequestMethod.GET)
-    public String acceptReservation(@PathVariable("reservationJobId") Long reservationJobId){
+    public String acceptReservation(@PathVariable("reservationJobId") Long reservationJobId,
+                                    RedirectAttributes redirectAttributes){
         reservationService.acceptReservation(reservationJobId);
+        redirectAttributes.addFlashAttribute("message", "Reservation " + reservationJobId + " accept");
         return "redirect:/reservation";
     }
 }

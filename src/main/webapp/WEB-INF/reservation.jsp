@@ -33,14 +33,8 @@
 
 </head>
 <body>
-<%@include file="nav.jsp" %>
 
-<div class="tabs is-medium is-centered" id="tabs">
-    <ul>
-        <li data-tab="1" id="changeContent1" onclick="changeContent1()" class="is-active"><a>Check</a></li>
-        <li data-tab="2" id="changeContent2" onclick="changeContent2()"><a>Accept</a></li>
-    </ul>
-</div>
+<%@include file="nav.jsp" %>
 
 <sec:authorize access="hasRole('ROLE_MANAGER')">
 <div class="tile is-parent is-8">
@@ -69,7 +63,7 @@
                     <td>${Reservation.job.dateTimeFrom} - ${Reservation.job.dateTimeTo}</td>
                     <td>${Reservation.job.jobType.type}</td>
                     <td>${Reservation.user.firstName}</td>
-                    <td>${Reservation.job.salary}</td>
+                    <td>${Reservation.job.salary}$</td>
                     <td>
                         <a href="/reservation/accept/${Reservation.id}">
                             <i class="fas fa-check-circle"></i>
@@ -90,6 +84,13 @@
 </sec:authorize>
 
 <sec:authorize access="hasRole('ROLE_WORKER')">
+    <div class="tabs is-medium is-centered" id="tabs">
+        <ul>
+            <li data-tab="1" id="changeContent1" onclick="changeContent1()" class="is-active"><a>Check</a></li>
+            <li data-tab="2" id="changeContent2" onclick="changeContent2()"><a>Accept</a></li>
+        </ul>
+    </div>
+
     <div data-content = "1" id = "content1">
     <div class="tile is-parent is-8">
         <article class="tile is-child box ">
@@ -117,7 +118,7 @@
                         <td>${Reservation.job.jobType.type}</td>
                         <td>${Reservation.job.jobType.store.name}</td>
                         <td>${Reservation.job.jobType.store.city}</td>
-                        <td>${Reservation.job.salary}</td>
+                        <td>${Reservation.job.salary}$</td>
                     </tr>
                 </c:forEach>
 
@@ -154,7 +155,7 @@
                         <td>${ReservationJob.jobType.type}</td>
                         <td>${ReservationJob.jobType.store.name}</td>
                         <td>${ReservationJob.jobType.store.city}</td>
-                        <td>${ReservationJob.salary}</td>
+                        <td>${ReservationJob.salary}$</td>
                     </tr>
                 </c:forEach>
 
@@ -164,5 +165,12 @@
     </div>
     </div>
 </sec:authorize>
+
+<c:if test="${not empty message}">
+    <div id="snackbar"><span>${message}</span></div>
+    <script>
+        showToast();
+    </script>
+</c:if>
 </body>
 </html>
