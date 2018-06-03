@@ -1,5 +1,6 @@
 package com.javamaster.controller;
 
+import com.javamaster.model.Job;
 import com.javamaster.model.Store;
 import com.javamaster.service.PDFGenerator;
 import com.javamaster.service.entity.JobService;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +23,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class PDFController {
@@ -39,26 +43,34 @@ public class PDFController {
     }
 
     @RequestMapping(value = "/generatePDF/download/{fileName:.+}", method = RequestMethod.POST)
-    public void downloadPDFResource(HttpServletResponse response,
-                                    @RequestParam("storeId") Long storeId,
-                                    @PathVariable("fileName") String fileName) {
+    public String downloadPDFResource(HttpServletResponse response,
+                                      RedirectAttributes redirectAttributes,
+                                      @RequestParam("storeId") Long storeId,
+                                      @RequestParam("date") String date,
+                                      @PathVariable("fileName") String fileName) {
 
         Store store = storeService.getById(storeId);
-        System.out.println(store.getName());
-        pdfGenerator.setData(jobService.getAll(), store);
+        List<Job> jobs = jobService.getWithTime(date);
+        if (!jobs.isEmpty()) {
+            pdfGenerator.setData(jobs, store);
+            String dataDirectory = "D:";
+            Path file = Paths.get(dataDirectory, fileName);
+            if (Files.exists(file)) {
+                response.setContentType("application/pdf");
+                response.addHeader("Content-Disposition", "attachment; filename=" + fileName);
+                try {
+                    Files.copy(file, response.getOutputStream());
+                    response.getOutputStream().flush();
+                    return null;
 
-        String dataDirectory = "D:";
-        Path file = Paths.get(dataDirectory, fileName);
-        if (Files.exists(file)) {
-            response.setContentType("application/pdf");
-            response.addHeader("Content-Disposition", "attachment; filename=" + fileName);
-            try {
-                Files.copy(file, response.getOutputStream());
-                response.getOutputStream().flush();
-            } catch (IOException ex) {
-                ex.printStackTrace();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         }
+        redirectAttributes.addFlashAttribute("message", "This configuration not have results");
+        return "redirect:/generatePDF";
+
     }
 
 }

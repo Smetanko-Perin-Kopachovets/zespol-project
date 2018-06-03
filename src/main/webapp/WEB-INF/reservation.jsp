@@ -41,7 +41,6 @@
     <article class="tile is-child box ">
 
         <input type="text" id="filterInput" onkeyup="filterTable()" placeholder="Search your job">
-
         <table id="reservationTable" class="table is-fullwidth is-striped is-hoverable">
             <thead>
             <tr>

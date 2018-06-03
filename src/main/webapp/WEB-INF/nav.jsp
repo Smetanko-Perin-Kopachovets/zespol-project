@@ -61,14 +61,6 @@
                     <span>GitHub</span>
                 </a>
 
-                <a class="button" href="/sendMail">
-                    <span class="icon">
-                        <i class="far fa-envelope"></i>
-                    </span>
-                    <span>SendMail</span>
-                </a>
-
-
             </div>
         </div>
     </div>

@@ -23,45 +23,55 @@ public class PDFGenerator {
 
     private List<Job> jobs;
     private Document document;
+    private Store store;
 
     public void setData(List<Job> jobs, Store store) {
         this.jobs = new ArrayList<>();
+        this.store = store;
         document = new Document();
         this.jobs = jobs.stream()
                 .filter(Job -> Job.getJobType().getStore().getName().equals(store.getName()))
                 .collect(Collectors.toList());
+
         generatePDF();
+
     }
 
-    public Document getDocument() {
-        return document;
-    }
+    private void generatePDF() {
+        if (!jobs.isEmpty()) {
+            try {
+                PdfWriter.getInstance(document, new FileOutputStream("D:\\PDFName.pdf"));
+                document.open();
 
-    public void generatePDF() {
+                addParagraph("PDF generated for " + jobs.get(0).getJobType().getStore().getName(), Element.ALIGN_CENTER);
+                addParagraph("All count jobs " + jobs.size(), Element.ALIGN_LEFT);
+                addParagraph("Available jobs " + jobs.size(), Element.ALIGN_LEFT);
+                addParagraph("Salary: " + getSalary(), Element.ALIGN_RIGHT);
+                addParagraph("Jobs", Element.ALIGN_CENTER);
+                addParagraph(" ", Element.ALIGN_RIGHT);
+                document.add(new Paragraph());
+                addTable();
+                document.close();
 
-        try {
-            PdfWriter.getInstance(document, new FileOutputStream("D:\\PDFName.pdf"));
+            } catch (DocumentException | FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                PdfWriter.getInstance(document, new FileOutputStream("D:\\PDFName.pdf"));
+            } catch (DocumentException | FileNotFoundException e) {
+                e.printStackTrace();
+            }
             document.open();
-
-            addParagraph("PDF generated for " + jobs.get(0).getJobType().getStore().getName(), Element.ALIGN_CENTER);
-            addParagraph("All count jobs " + jobs.size(), Element.ALIGN_LEFT);
-            addParagraph("Available jobs " + jobs.size(), Element.ALIGN_LEFT);
-            addParagraph("Salary: " + getSalary(), Element.ALIGN_RIGHT);
-            addParagraph("Jobs", Element.ALIGN_CENTER);
-            addParagraph(" ", Element.ALIGN_RIGHT);
-            document.add(new Paragraph());
-            addTable();
+            addParagraph("No results for " + store.getName(), Element.ALIGN_CENTER);
             document.close();
-
-        } catch (DocumentException | FileNotFoundException e) {
-            e.printStackTrace();
         }
     }
 
 
     private Float getSalary() {
         Float salary = 0F;
-        for(Job job : jobs) {
+        for (Job job : jobs) {
             salary += job.getSalary();
         }
         return salary;
@@ -80,7 +90,6 @@ public class PDFGenerator {
     }
 
     private void addTable() {
-
         try {
             Paragraph paragraph = new Paragraph();
             PdfPTable table = new PdfPTable(6);
@@ -119,6 +128,10 @@ public class PDFGenerator {
         header.setBorderWidth(2);
         header.setPhrase(new Phrase(headerTitle));
         table.addCell(header);
+    }
+
+    public Document getDocument() {
+        return document;
     }
 
 }

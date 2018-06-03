@@ -9,4 +9,5 @@ import java.util.ListIterator;
 public interface JobService extends CRUDService<Job> {
     List<Job> getFiltrListJob(User user);
     List<Job> jobOnUser(Integer id);
+    List<Job> getWithTime(String date);
 }

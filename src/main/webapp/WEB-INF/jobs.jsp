@@ -73,16 +73,20 @@
                                         <td>${Job.jobType.store.city}</td>
                                         <td>${Job.dateTimeFrom} - ${Job.dateTimeTo}</td>
                                         <td>${Job.salary}$</td>
+                                        <sec:authorize access="hasRole('ROLE_WORKER')">
                                         <td>
                                             <a href="/reservation/${Job.id}">
                                                 <i class="fas fa-wrench"></i>
                                             </a>
                                         </td>
+                                        </sec:authorize>
+                                        <sec:authorize access="hasRole('ROLE_MANAGER')">
                                         <td>
                                             <a href="/jobs/delete/${Job.id}">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
                                         </td>
+                                        </sec:authorize>
                                     </tr>
                                 </c:forEach>
 

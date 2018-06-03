@@ -13,6 +13,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+
 
     <script src="<c:url value="/resources/js/main.js" />"></script>
     <script src="<c:url value="/resources/js/PDFGenerator.js" />"></script>
@@ -56,36 +59,45 @@
             </div>
 
             <div class="tile is-parent is-6">
-                <form:form method="post" action="/generatePDF/download/PDFName.pdf">
-                    <article id="workplaceContent" class="tile is-child box ">
-                        <span>Select workplace</span>
-                        <div class="field">
-                            <div class="control">
-                                <div class="select is-medium">
-                                    <select name="storeId">
-                                        <c:forEach items="${stores}" var="store">
-                                            <option value="${store.id} ">${store.name} - ${store.city} </option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
+                <article id="workplaceContent" class="tile is-child box has-text-centered ">
+                    <form:form method="post" action="/generatePDF/download/PDFName.pdf">
+                    <span>Select workplace</span>
+                    <div class="field">
+                        <div class="control">
+                            <div class="select is-medium">
+                                <select name="storeId">
+                                    <c:forEach items="${stores}" var="store">
+                                        <option value="${store.id} ">${store.name} - ${store.city} </option>
+                                    </c:forEach>
+                                </select>
                             </div>
                         </div>
-                        <a class="button is-primary" onclick="changeContent1()"> Next</a>
-                    </article>
+                    </div>
+                    <a class="button is-primary" onclick="changeContent1()"> Next</a>
+                </article>
 
-                    <article id="timeContent" class="tile is-child box ">
-                        time
+                <article id="timeContent" class="tile is-child box ">
 
-                        <a class="button" onclick="changeContent2()"> Next</a>
-                    </article>
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input id="date" type="text" placeholder="Select day" class="datepicker" name="date" required/>
+                            <span class="icon is-small is-left">
+                                    <%--<i class="far fa-building"></i>--%>
+                            </span>
+                        </p>
+                    </div>
 
-                    <article id="downloadContent" class="tile is-child box ">
-                        Get your pdf
+                    <a class="button" onclick="changeContent2()"> Next</a>
+                </article>
 
-                        <button type="submit" class="button is-primary">Download</button>
+                <article id="downloadContent" class="tile is-child box ">
+                    Get your pdf
 
-                    </article>
-                </form:form>
+                    <button type="submit" class="button is-primary">Download</button>
+
+                    </form:form>
+                </article>
+
             </div>
 
         </div>
