@@ -1,7 +1,6 @@
 package com.javamaster.controller;
 
 import com.javamaster.model.Job;
-import com.javamaster.model.Store;
 import com.javamaster.model.User;
 import com.javamaster.service.PDFGenerator;
 import com.javamaster.service.entity.JobService;
@@ -21,8 +20,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,23 +53,33 @@ public class PDFController {
                                       @RequestParam("userId") Long userId,
                                       @RequestParam("dateFrom") String dateFrom,
                                       @RequestParam("dateTo") String dateTo,
-                                      @PathVariable("fileName") String fileName) {
+                                      @PathVariable("fileName") String fileName,
+                                      Principal principal) {
 
         pdfGenerator = new PDFGenerator();
         List<Job> jobs = jobService.getWithTime(dateFrom, dateTo);
         if (!jobs.isEmpty()) {
-            if(userId == 0 && storeId == 0) {
-                System.out.println("without param pdf");
-                pdfGenerator.generateWithoutParamPDF(jobs);
-            } if(userId != 0 && storeId == 0) {
-                System.out.println("user pdf");
-                pdfGenerator.generateUserPDF(jobs, userService.getById(userId));
-            } if(storeId != 0 && userId == 0) {
-                System.out.println("store pdf");
-                pdfGenerator.generateStorePDF(jobs, storeService.getById(storeId));
-            } if(storeId != 0 && userId != 0) {
-                System.out.println("all param pdf");
-                pdfGenerator.generateAllParamPDF(jobs, storeService.getById(storeId), userService.getById(userId));
+
+            if (userService.getUserByEmail(principal.getName()).getRole().getName().equals("ROLE_WORKER")) {
+                System.out.println("worker pdf");
+                pdfGenerator.generateAllParamPDF(jobs, storeService.getById(storeId), userService.getUserByEmail(principal.getName()));
+            } else {
+                if (userId == 0 && storeId == 0) {
+                    System.out.println("without param pdf");
+                    pdfGenerator.generateWithoutParamPDF(jobs);
+                }
+                if (userId != 0 && storeId == 0) {
+                    System.out.println("user pdf");
+                    pdfGenerator.generateUserPDF(jobs, userService.getById(userId));
+                }
+                if (storeId != 0 && userId == 0) {
+                    System.out.println("store pdf");
+                    pdfGenerator.generateStorePDF(jobs, storeService.getById(storeId));
+                }
+                if (storeId != 0 && userId != 0) {
+                    System.out.println("all param pdf");
+                    pdfGenerator.generateAllParamPDF(jobs, storeService.getById(storeId), userService.getById(userId));
+                }
             }
 
             String dataDirectory = "D:";
