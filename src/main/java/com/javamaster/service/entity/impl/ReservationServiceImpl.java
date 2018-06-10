@@ -44,7 +44,7 @@ public class ReservationServiceImpl implements ReservationService {
         Reservation reservation = getById(id);
         if(checkReservation(reservation)){
             reservationDao.deleteAllReservationByJobId(reservation.getJob().getId());
-            return reservationDao.acceptReservationOnUser(reservation);
+            return (Reservation) reservationDao.acceptReservationOnUser(reservation);
         }
         return null;
     }
