@@ -73,6 +73,13 @@ public class ReservationController {
                     job.getJobType().getStore().getName() + ", " +
                     job.getJobType().getStore().getCity() + " at " +
                     job.getDateTimeFrom();
+
+            for(User mailReceiver : userService.getAll()) {
+                if(mailReceiver.getRole().getName().equals("ROLE_MANAGER")) {
+                    mailService.sendEmail(mailReceiver.getEmail(), "New reservation expect",
+                            "One new reservation wait for your action");
+                }
+            }
             mailService.sendEmail(user.getEmail(), "New reservation for " + reservation.getUser().getEmail(), body);
         }
 

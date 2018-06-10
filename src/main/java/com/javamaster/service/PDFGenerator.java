@@ -6,12 +6,9 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.javamaster.model.Job;
 import com.javamaster.model.Store;
-import org.springframework.context.annotation.Scope;
+import com.javamaster.model.User;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
-import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -24,11 +21,12 @@ public class PDFGenerator {
     private List<Job> jobs;
     private Document document;
     private Store store;
+    private User user;
 
-    public void setData(List<Job> jobs, Store store) {
+    public void generateStorePDF(List<Job> jobs, Store store) {
         this.jobs = new ArrayList<>();
-        this.store = store;
         document = new Document();
+        this.store = store;
         this.jobs = jobs.stream()
                 .filter(Job -> Job.getJobType().getStore().getName().equals(store.getName()))
                 .collect(Collectors.toList());
@@ -37,12 +35,51 @@ public class PDFGenerator {
 
     }
 
-    private void generatePDF() {
-        if (!jobs.isEmpty()) {
-            try {
-                PdfWriter.getInstance(document, new FileOutputStream("D:\\PDFName.pdf"));
-                document.open();
+    public void generateAllParamPDF(List<Job> jobs, Store store, User user) {
+        this.jobs = new ArrayList<>();
+        document = new Document();
+        this.store = store;
+        this.user = user;
+        for (Job job : jobs) {
+            if (job.getUser() != null) {
+                if (job.getUser().getId().equals(Integer.parseInt(user.getId().toString()))
+                        &&
+                        job.getJobType().getStore().getId().equals(store.getId())) {
+                    this.jobs.add(job);
+                }
+            }
+        }
 
+        generatePDF();
+    }
+
+    public void generateWithoutParamPDF(List<Job> jobs) {
+        this.jobs = new ArrayList<>();
+        document = new Document();
+        this.jobs = jobs;
+        generatePDF();
+    }
+
+    public void generateUserPDF(List<Job> jobs, User user) {
+        this.jobs = new ArrayList<>();
+        document = new Document();
+        this.user = user;
+        for (Job job : jobs) {
+            if (job.getUser() != null) {
+                if (job.getUser().getId().equals(user.getId())) {
+                    System.out.println("add job");
+                    this.jobs.add(job);
+                }
+            }
+        }
+        generatePDF();
+    }
+
+    private void generatePDF() {
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("D:\\PDFName.pdf"));
+            document.open();
+            if (!jobs.isEmpty()) {
                 addParagraph("PDF generated for " + jobs.get(0).getJobType().getStore().getName(), Element.ALIGN_CENTER);
                 addParagraph("All count jobs " + jobs.size(), Element.ALIGN_LEFT);
                 addParagraph("Available jobs " + jobs.size(), Element.ALIGN_LEFT);
@@ -51,20 +88,13 @@ public class PDFGenerator {
                 addParagraph(" ", Element.ALIGN_RIGHT);
                 document.add(new Paragraph());
                 addTable();
-                document.close();
-
-            } catch (DocumentException | FileNotFoundException e) {
-                e.printStackTrace();
+            } else {
+                addParagraph("No results", Element.ALIGN_CENTER);
             }
-        } else {
-            try {
-                PdfWriter.getInstance(document, new FileOutputStream("D:\\PDFName.pdf"));
-            } catch (DocumentException | FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            document.open();
-            addParagraph("No results for " + store.getName(), Element.ALIGN_CENTER);
             document.close();
+        } catch (DocumentException | FileNotFoundException e) {
+            e.printStackTrace();
+
         }
     }
 

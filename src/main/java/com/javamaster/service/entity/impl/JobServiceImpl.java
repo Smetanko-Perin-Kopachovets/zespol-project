@@ -88,8 +88,8 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
-    public List<Job> getWithTime(String date) {
-        return jobDao.getJobByTime(date);
+    public List<Job> getWithTime(String dateFrom, String dateTo) {
+        return jobDao.getJobByTime(dateFrom, dateTo);
     }
 
 }

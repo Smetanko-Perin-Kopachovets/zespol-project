@@ -61,11 +61,13 @@
             <div class="tile is-parent is-6">
                 <article id="workplaceContent" class="tile is-child box has-text-centered ">
                     <form:form method="post" action="/generatePDF/download/PDFName.pdf">
-                    <span>Select workplace</span>
+                    <span>Select workplace and user</span>
+
                     <div class="field">
                         <div class="control">
                             <div class="select is-medium">
-                                <select name="storeId">
+                                <select id="selectStore" name="storeId">
+                                    <option value="0">All</option>
                                     <c:forEach items="${stores}" var="store">
                                         <option value="${store.id} ">${store.name} - ${store.city} </option>
                                     </c:forEach>
@@ -73,14 +75,39 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <div class="select is-medium">
+                                <select id="selectUser" name="userId">
+                                    <option value="0">All</option>
+                                    <c:forEach items="${users}" var="user">
+                                        <option value="${user.id} ">${user.firstName} - ${user.email} </option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                     <a class="button is-primary" onclick="changeContent1()"> Next</a>
                 </article>
 
-                <article id="timeContent" class="tile is-child box ">
+                <article id="timeContent" class="tile is-child box has-text-centered">
+                    <span>Select time period: </span>
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input id="dateFrom" type="text" placeholder="Select date from" class="datepicker"
+                                   name="dateFrom" required/>
+                            <span class="icon is-small is-left">
+                                    <%--<i class="far fa-building"></i>--%>
+                            </span>
+                        </p>
+                    </div>
 
                     <div class="field">
                         <p class="control has-icons-left">
-                            <input id="date" type="text" placeholder="Select day" class="datepicker" name="date" required/>
+                            <input id="dateTo" type="text" placeholder="Select date to" class="datepicker" name="dateTo"
+                                   required/>
                             <span class="icon is-small is-left">
                                     <%--<i class="far fa-building"></i>--%>
                             </span>

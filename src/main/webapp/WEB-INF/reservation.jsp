@@ -44,7 +44,7 @@
         <table id="reservationTable" class="table is-fullwidth is-striped is-hoverable">
             <thead>
             <tr>
-                <th>Position</th>
+                <th>Id</th>
                 <th>Date</th>
                 <th>Job-time</th>
                 <th>Job Type</th>

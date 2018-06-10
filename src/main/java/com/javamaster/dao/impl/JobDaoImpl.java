@@ -1,5 +1,6 @@
 package com.javamaster.dao.impl;
 
+import com.javamaster.dao.UserRepository;
 import com.javamaster.model.Job;
 import com.javamaster.service.entity.JobService;
 import com.javamaster.service.entity.JobTypeService;
@@ -28,13 +29,15 @@ public class JobDaoImpl {
     private JobTypeService jobTypeService;
     private JobExtractor jobExtractor;
     private NamedParameterJdbcTemplate jdbcTemplate;
+    private UserRepository userRepository;
 
     @Autowired
-    public JobDaoImpl(DataSource dataSource, JobTypeService jobTypeService) {
+    public JobDaoImpl(DataSource dataSource, JobTypeService jobTypeService, UserRepository userRepository) {
         this.dataSource = dataSource;
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
         this.jobTypeService = jobTypeService;
         this.jobExtractor = new JobExtractor();
+        this.userRepository = userRepository;
 
     }
 
@@ -49,11 +52,13 @@ public class JobDaoImpl {
                 "WHERE j.users_id_fk = :users_id_fk", params, jobExtractor);
     }
 
-    public List<Job> getJobByTime(String date) {
-        LocalDate localDate = LocalDate.parse(date);
+    public List<Job> getJobByTime(String dateFrom, String dateTo) {
+        LocalDate localDateFrom = LocalDate.parse(dateFrom);
+        LocalDate localDateTo = LocalDate.parse(dateTo);
         SqlParameterSource params = new MapSqlParameterSource()
-                .addValue("date", localDate);
-        return jdbcTemplate.query("SELECT * FROM job WHERE date > :date", params, jobExtractor);
+                .addValue("dateFrom", localDateFrom)
+                .addValue("dateTo", localDateTo);
+        return jdbcTemplate.query("SELECT * FROM job WHERE date BETWEEN :dateFrom and :dateTo", params, jobExtractor);
     }
 
     private class JobExtractor implements ResultSetExtractor<List<Job>> {
@@ -70,6 +75,7 @@ public class JobDaoImpl {
                 job.setDate(resultSet.getDate("date").toLocalDate());
                 job.setDateTimeFrom(resultSet.getTime("timefrom").toLocalTime());
                 job.setDateTimeTo(resultSet.getTime("timeto").toLocalTime());
+                job.setUser(userRepository.findOne(resultSet.getInt("users_id_fk")));
                 list.add(job);
             }
             return list;

@@ -3,7 +3,10 @@ $(document).ready(
         document.getElementById("workplaceContent").style.display = 'block';
         document.getElementById("timeContent").style.display = 'none';
         document.getElementById("downloadContent").style.display = 'none';
-    });
+    }
+);
+
+
 
 function changeContent1() {
     document.getElementById("workplaceContent").style.display = 'none';

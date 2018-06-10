@@ -37,12 +37,9 @@ public class Job {
     @Column(name = "pricePerjob", nullable = false)
     private Float salary;
 
-
     @OneToOne
     @JoinColumn(name = "users_id_fk")
     private User user;
-
-
 
     public Job() { }
 
