@@ -80,7 +80,16 @@
 
                     <div class="field">
                         <p class="control has-icons-left">
-                            <input id="date" type="text" placeholder="Select day" class="datepicker" name="date" required/>
+                            <input id="dateFrom" type="text" placeholder="Select da from" class="datepicker" name="date" required/>
+                            <span class="icon is-small is-left">
+                                    <%--<i class="far fa-building"></i>--%>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input id="dateTo" type="text" placeholder="Select day to" class="datepicker" name="date" required/>
                             <span class="icon is-small is-left">
                                     <%--<i class="far fa-building"></i>--%>
                             </span>
