@@ -6,18 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="711af942-5f43-44c5-8da2-03e44546e72c" name="Default" comment="update - pdf generator">
+    <list default="true" id="711af942-5f43-44c5-8da2-03e44546e72c" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/PDFController.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/PDFController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/ReservationController.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/controller/ReservationController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/dao/impl/JobDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/dao/impl/JobDaoImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/model/Job.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/model/Job.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/service/PDFGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/service/PDFGenerator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/service/entity/JobService.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/service/entity/JobService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javamaster/service/entity/impl/JobServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/javamaster/service/entity/impl/JobServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/PDFGenerator.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/PDFGenerator.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reservation.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reservation.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/PDFGenerator.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/PDFGenerator.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PDFController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PDFController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/PDFController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+            <state relative-caret-position="329">
+              <caret line="74" column="50" lean-forward="false" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -57,8 +50,8 @@
       <file leaf-file-name="PDFGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/service/PDFGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="73" column="9" lean-forward="false" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+            <state relative-caret-position="1309">
+              <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
               <folding>
                 <element signature="e#4939#4940#0" expanded="true" />
                 <element signature="e#4974#4975#0" expanded="true" />
@@ -69,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reservation.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reservation.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/reservation.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+            <state relative-caret-position="141">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -102,6 +95,26 @@
                 <marker date="1528656471761" expanded="true" signature="2359:2411" ph="SELECT * FRO... job" />
                 <marker date="1528656471761" expanded="true" signature="2359:2417" ph="SELECT * FRO... job" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PDFGenerator.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/PDFGenerator.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,26 +149,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReservationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/ReservationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="74" column="42" lean-forward="false" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -181,11 +174,17 @@
         <entry key="$PROJECT_DIR$" value="RemotePDFGenerator" />
       </map>
     </option>
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="master" repo="$PROJECT_DIR$" source="PDFGenerator" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/PDFGenerator.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -234,13 +233,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/service/entity/JobService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/service/entity/impl/JobServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/PDFGenerator.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/PDFGenerator.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/javamaster/controller/PDFController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/controller/ReservationController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/javamaster/service/PDFGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/dao/impl/JobDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/javamaster/model/Job.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/reservation.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/javamaster/service/PDFGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/PDFGenerator.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/javamaster/controller/PDFController.java" />
       </list>
     </option>
   </component>
@@ -762,7 +761,7 @@
       <workItem from="1527155038251" duration="30013000" />
       <workItem from="1528032529506" duration="10843000" />
       <workItem from="1528622840409" duration="1007000" />
-      <workItem from="1528624031909" duration="18614000" />
+      <workItem from="1528624031909" duration="21731000" />
     </task>
     <task id="LOCAL-00001" summary="fix - controllers">
       <created>1520941797142</created>
@@ -1016,11 +1015,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528623491147</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="refactor - pdf generator">
+      <created>1528658637560</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1528658637560</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287750000" />
+    <option name="totallyTimeSpent" value="290867000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1053,10 +1059,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32668713" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.857362" sideWeight="0.49092284" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5935583" sideWeight="0.49092284" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.4969743" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2859304" sideWeight="0.49386504" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2881997" sideWeight="0.49386504" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1079,7 +1085,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor" />
     <MESSAGE value="minor - fixes" />
     <MESSAGE value="add - toast messages for all store operation" />
     <MESSAGE value="add - jpa-data" />
@@ -1104,7 +1109,8 @@
     <MESSAGE value="add - security second part" />
     <MESSAGE value="refactor - jobs&#10;add - role security" />
     <MESSAGE value="update - pdf generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="update - pdf generator" />
+    <MESSAGE value="refactor - pdf generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor - pdf generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1423,26 +1429,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/PDFGenerator.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="82" column="52" lean-forward="false" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1502,18 +1492,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/PDFController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/service/PDFGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="73" column="9" lean-forward="false" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+        <state relative-caret-position="1309">
+          <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
           <folding>
             <element signature="e#4939#4940#0" expanded="true" />
             <element signature="e#4974#4975#0" expanded="true" />
@@ -1525,8 +1507,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/reservation.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+        <state relative-caret-position="141">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/PDFGenerator.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/javamaster/controller/PDFController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="74" column="50" lean-forward="false" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
           <folding />
         </state>
       </provider>

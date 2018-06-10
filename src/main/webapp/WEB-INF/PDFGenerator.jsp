@@ -76,18 +76,35 @@
                         </div>
                     </div>
 
-                    <div class="field">
-                        <div class="control">
-                            <div class="select is-medium">
-                                <select id="selectUser" name="userId">
-                                    <option value="0">All</option>
-                                    <c:forEach items="${users}" var="user">
-                                        <option value="${user.id} ">${user.firstName} - ${user.email} </option>
-                                    </c:forEach>
-                                </select>
+                        <sec:authorize access="hasRole('ROLE_MANAGER')">
+                            <div class="field">
+                                <div class="control">
+                                    <div class="select is-medium">
+                                        <select id="selectUser" name="userId">
+                                            <option value="0">All</option>
+                                            <c:forEach items="${users}" var="user">
+                                                <option value="${user.id} ">${user.firstName} - ${user.email} </option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+
+                        </sec:authorize>
+
+                        <sec:authorize access="hasRole('ROLE_WORKER')">
+                            <div class="field">
+                                <div class="control">
+                                    <div class="select is-medium">
+                                        <select name="userId" >
+                                            <option value="0">Me</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </sec:authorize>
+
 
                     <a class="button is-primary" onclick="changeContent1()"> Next</a>
                 </article>
